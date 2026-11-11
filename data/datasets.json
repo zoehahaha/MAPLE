@@ -1,0 +1,53 @@
+{
+  "workloads": [
+    {
+      "id": "snips",
+      "name": "Snips",
+      "path": "data/workloads/snips/workload.json",
+      "rows": 2000,
+      "queries": 40,
+      "answers": 80000
+    },
+    {
+      "id": "arxiv",
+      "name": "arXiv",
+      "path": "data/workloads/arxiv/workload.json",
+      "rows": 2000,
+      "queries": 40,
+      "answers": 80000
+    },
+    {
+      "id": "amazon_elec_reviews",
+      "name": "Amazon-Elec",
+      "path": "data/workloads/amazon_elec_reviews/workload.json",
+      "rows": 5000,
+      "queries": 40,
+      "answers": 200000
+    },
+    {
+      "id": "20ng_real",
+      "name": "20 Newsgroups real",
+      "path": "data/workloads/20ng_real/workload.json",
+      "rows": 2000,
+      "queries": 47,
+      "answers": 94000
+    },
+    {
+      "id": "20ng_synthetic",
+      "name": "20 Newsgroups synthetic",
+      "path": "data/workloads/20ng_synthetic/workload.json",
+      "rows": 2000,
+      "queries": 120,
+      "answers": 240000
+    },
+    {
+      "id": "cfpb",
+      "name": "CFPB",
+      "path": "data/workloads/cfpb/workload.json",
+      "rows": 1000,
+      "queries": 40,
+      "answers": 40000
+    }
+  ],
+  "total_answers": 734000
+}

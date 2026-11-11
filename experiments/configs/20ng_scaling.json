@@ -1,0 +1,22 @@
+{
+  "protocol": "PREP_20NG_QUERY_SCALING_V1",
+  "base_config": "paper.json",
+  "rows": 2000,
+  "real_query_prefixes": [
+    10,
+    20,
+    40,
+    47
+  ],
+  "simulated_query_prefixes": [
+    10,
+    20,
+    40,
+    47,
+    80,
+    120
+  ],
+  "real_reference": "LLM oracle answers",
+  "simulated_reference": "oracle answers derived from document labels",
+  "provider_attempts": 0
+}

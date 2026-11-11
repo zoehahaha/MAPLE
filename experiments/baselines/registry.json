@@ -1,0 +1,41 @@
+{
+  "all_direct": {
+    "configurations": [
+      "registered workload"
+    ]
+  },
+  "exact_cache": {
+    "configurations": [
+      "exact effective request identity"
+    ]
+  },
+  "lotus": {
+    "configurations": [
+      "default-prefix",
+      "full-range"
+    ]
+  },
+  "semweave_style": {
+    "configurations": [
+      "threshold-0.70",
+      "threshold-0.80",
+      "threshold-0.90"
+    ]
+  },
+  "gptcache": {
+    "configurations": [
+      "full-request-0.90",
+      "operator-input-0.975"
+    ]
+  },
+  "native_fusion": {
+    "configurations": [
+      "registered grouped request"
+    ]
+  },
+  "semreuse_pr": {
+    "configurations": [
+      "native PR"
+    ]
+  }
+}

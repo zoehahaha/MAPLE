@@ -1,0 +1,1002 @@
+[
+  {
+    "definition": "True when the consumer says an electronic bank transfer, ACH, wire, or peer-to-peer transfer was unauthorized.",
+    "distinct_task_reason": "Detect disputed electronic transfers",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude card purchases, cash withdrawals, and merely delayed authorized transfers.",
+    "family": "transaction_event",
+    "inclusions": "Include transfers initiated by an unknown party or taken over account.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q01_UNAUTHORIZED_ELECTRONIC_TRANSFER",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q01_UNAUTHORIZED_ELECTRONIC_TRANSFER\nDefinition: True when the consumer says an electronic bank transfer, ACH, wire, or peer-to-peer transfer was unauthorized.\nInclude: Include transfers initiated by an unknown party or taken over account.\nExclude: Exclude card purchases, cash withdrawals, and merely delayed authorized transfers.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect disputed electronic transfers",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when a debit or credit card purchase is alleged to be unauthorized.",
+    "distinct_task_reason": "Detect disputed card purchases",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude bank transfers, ATM cash withdrawals, and authorized purchases with only a quality dispute.",
+    "family": "transaction_event",
+    "inclusions": "Include card-not-present and merchant purchase fraud.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q02_UNAUTHORIZED_CARD_PURCHASE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q02_UNAUTHORIZED_CARD_PURCHASE\nDefinition: True when a debit or credit card purchase is alleged to be unauthorized.\nInclude: Include card-not-present and merchant purchase fraud.\nExclude: Exclude bank transfers, ATM cash withdrawals, and authorized purchases with only a quality dispute.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect disputed card purchases",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint alleges an unauthorized ATM or other cash withdrawal.",
+    "distinct_task_reason": "Detect disputed ATM or cash withdrawals",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude card purchases, transfers, and cash-deposit shortages.",
+    "family": "transaction_event",
+    "inclusions": "Include cash withdrawals made after card or account compromise.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q03_UNAUTHORIZED_CASH_WITHDRAWAL",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q03_UNAUTHORIZED_CASH_WITHDRAWAL\nDefinition: True when the complaint alleges an unauthorized ATM or other cash withdrawal.\nInclude: Include cash withdrawals made after card or account compromise.\nExclude: Exclude card purchases, transfers, and cash-deposit shortages.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect disputed ATM or cash withdrawals",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the core complaint concerns a paper check, cashier's check, or money order being lost, altered, returned, or processed incorrectly.",
+    "distinct_task_reason": "Detect check or money-order processing problems",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude electronic transfers and card purchases without a check instrument.",
+    "family": "transaction_event",
+    "inclusions": "Include stop-payment and forged-check disputes.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q04_CHECK_OR_MONEY_ORDER_PROBLEM",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q04_CHECK_OR_MONEY_ORDER_PROBLEM\nDefinition: True when the core complaint concerns a paper check, cashier's check, or money order being lost, altered, returned, or processed incorrectly.\nInclude: Include stop-payment and forged-check disputes.\nExclude: Exclude electronic transfers and card purchases without a check instrument.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect check or money-order processing problems",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when a recurring debit or subscription charge continued after the consumer says authorization or service was cancelled.",
+    "distinct_task_reason": "Detect recurring charges continuing after cancellation",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a single unauthorized charge with no cancellation history.",
+    "family": "transaction_event",
+    "inclusions": "Include repeated automatic withdrawals after revocation.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q05_RECURRING_DEBIT_AFTER_CANCELLATION",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q05_RECURRING_DEBIT_AFTER_CANCELLATION\nDefinition: True when a recurring debit or subscription charge continued after the consumer says authorization or service was cancelled.\nInclude: Include repeated automatic withdrawals after revocation.\nExclude: Exclude a single unauthorized charge with no cancellation history.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect recurring charges continuing after cancellation",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the narrative disputes an overdraft, nonsufficient-funds, or returned-item fee.",
+    "distinct_task_reason": "Detect overdraft or insufficient-funds fee disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude late-payment, annual, origination, and interest charges.",
+    "family": "fee_interest",
+    "inclusions": "Include transaction-ordering allegations that caused such fees.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q06_OVERDRAFT_OR_NSF_FEE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q06_OVERDRAFT_OR_NSF_FEE\nDefinition: True when the narrative disputes an overdraft, nonsufficient-funds, or returned-item fee.\nInclude: Include transaction-ordering allegations that caused such fees.\nExclude: Exclude late-payment, annual, origination, and interest charges.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect overdraft or insufficient-funds fee disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer disputes a fee assessed for an allegedly late payment.",
+    "distinct_task_reason": "Detect late-payment fee disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude interest accrual and overdraft fees without a late-payment fee.",
+    "family": "fee_interest",
+    "inclusions": "Include claims the payment was timely but posted late.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q07_LATE_PAYMENT_FEE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q07_LATE_PAYMENT_FEE\nDefinition: True when the consumer disputes a fee assessed for an allegedly late payment.\nInclude: Include claims the payment was timely but posted late.\nExclude: Exclude interest accrual and overdraft fees without a late-payment fee.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect late-payment fee disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint challenges interest, APR, rate changes, or interest calculations.",
+    "distinct_task_reason": "Detect interest-rate or APR disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude standalone fixed fees with no interest-rate issue.",
+    "family": "fee_interest",
+    "inclusions": "Include promotional-rate expiration disputes.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q08_INTEREST_OR_APR_DISPUTE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q08_INTEREST_OR_APR_DISPUTE\nDefinition: True when the complaint challenges interest, APR, rate changes, or interest calculations.\nInclude: Include promotional-rate expiration disputes.\nExclude: Exclude standalone fixed fees with no interest-rate issue.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect interest-rate or APR disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint challenges an annual, membership, maintenance, or inactivity fee.",
+    "distinct_task_reason": "Detect annual or membership fee disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude overdraft, late-payment, and origination fees.",
+    "family": "fee_interest",
+    "inclusions": "Include fees charged despite promised waiver or account closure.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q09_ANNUAL_OR_MEMBERSHIP_FEE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q09_ANNUAL_OR_MEMBERSHIP_FEE\nDefinition: True when the complaint challenges an annual, membership, maintenance, or inactivity fee.\nInclude: Include fees charged despite promised waiver or account closure.\nExclude: Exclude overdraft, late-payment, and origination fees.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect annual or membership fee disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the narrative disputes an origination, closing, appraisal, underwriting, or similar loan setup cost.",
+    "distinct_task_reason": "Detect loan-origination or closing-cost disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude servicing fees assessed after loan origination.",
+    "family": "fee_interest",
+    "inclusions": "Include undisclosed or duplicated closing costs.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q10_ORIGINATION_CLOSING_OR_APPRAISAL_FEE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q10_ORIGINATION_CLOSING_OR_APPRAISAL_FEE\nDefinition: True when the narrative disputes an origination, closing, appraisal, underwriting, or similar loan setup cost.\nInclude: Include undisclosed or duplicated closing costs.\nExclude: Exclude servicing fees assessed after loan origination.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect loan-origination or closing-cost disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer says information furnished to a credit bureau is inaccurate or not corrected.",
+    "distinct_task_reason": "Detect inaccurate credit reporting",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude inability to obtain a report without an accuracy allegation.",
+    "family": "reporting_servicing",
+    "inclusions": "Include wrong balance, delinquency, account ownership, or status reporting.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q11_INCORRECT_CREDIT_REPORTING",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q11_INCORRECT_CREDIT_REPORTING\nDefinition: True when the consumer says information furnished to a credit bureau is inaccurate or not corrected.\nInclude: Include wrong balance, delinquency, account ownership, or status reporting.\nExclude: Exclude inability to obtain a report without an accuracy allegation.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect inaccurate credit reporting",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when an account or debt is alleged to have been opened or created through identity theft.",
+    "distinct_task_reason": "Detect identity-theft accounts",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude ordinary unauthorized transactions on a legitimately opened account.",
+    "family": "reporting_servicing",
+    "inclusions": "Include mixed-file or impersonation claims tied to an account.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q12_IDENTITY_THEFT_ACCOUNT",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q12_IDENTITY_THEFT_ACCOUNT\nDefinition: True when an account or debt is alleged to have been opened or created through identity theft.\nInclude: Include mixed-file or impersonation claims tied to an account.\nExclude: Exclude ordinary unauthorized transactions on a legitimately opened account.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect identity-theft accounts",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer says a submitted dispute was ignored, perfunctorily handled, or not investigated.",
+    "distinct_task_reason": "Detect inadequate dispute investigation",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude general dissatisfaction without an asserted dispute submission.",
+    "family": "reporting_servicing",
+    "inclusions": "Include failure to review supplied documentation.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q13_DISPUTE_NOT_INVESTIGATED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q13_DISPUTE_NOT_INVESTIGATED\nDefinition: True when the consumer says a submitted dispute was ignored, perfunctorily handled, or not investigated.\nInclude: Include failure to review supplied documentation.\nExclude: Exclude general dissatisfaction without an asserted dispute submission.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect inadequate dispute investigation",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when an account was allegedly frozen, restricted, suspended, or closed unexpectedly.",
+    "distinct_task_reason": "Detect unexpected account restriction or closure",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a consumer-requested closure with no disputed restriction.",
+    "family": "reporting_servicing",
+    "inclusions": "Include inability to access funds due to the restriction.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q14_ACCOUNT_FROZEN_OR_CLOSED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q14_ACCOUNT_FROZEN_OR_CLOSED\nDefinition: True when an account was allegedly frozen, restricted, suspended, or closed unexpectedly.\nInclude: Include inability to access funds due to the restriction.\nExclude: Exclude a consumer-requested closure with no disputed restriction.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect unexpected account restriction or closure",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when a payment was allegedly received but not credited, credited late, or applied to the wrong balance or account.",
+    "distinct_task_reason": "Detect missing or misapplied payments",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude inability to make a payment before any payment was submitted.",
+    "family": "reporting_servicing",
+    "inclusions": "Include escrow or principal allocation errors.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q15_PAYMENT_MISAPPLIED_OR_NOT_CREDITED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q15_PAYMENT_MISAPPLIED_OR_NOT_CREDITED\nDefinition: True when a payment was allegedly received but not credited, credited late, or applied to the wrong balance or account.\nInclude: Include escrow or principal allocation errors.\nExclude: Exclude inability to make a payment before any payment was submitted.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect missing or misapplied payments",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer explicitly describes inability or serious difficulty making required loan or credit payments.",
+    "distinct_task_reason": "Detect stated difficulty repaying",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude mere dissatisfaction with price when ability to pay is not questioned.",
+    "family": "loan_hardship",
+    "inclusions": "Include income loss, medical hardship, or unaffordable payment claims.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q16_REPAYMENT_HARDSHIP",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q16_REPAYMENT_HARDSHIP\nDefinition: True when the consumer explicitly describes inability or serious difficulty making required loan or credit payments.\nInclude: Include income loss, medical hardship, or unaffordable payment claims.\nExclude: Exclude mere dissatisfaction with price when ability to pay is not questioned.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect stated difficulty repaying",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint concerns requesting, entering, exiting, or being mishandled in forbearance or deferment.",
+    "distinct_task_reason": "Detect forbearance or deferment issues",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude general hardship with no forbearance or deferment request.",
+    "family": "loan_hardship",
+    "inclusions": "Include paused-payment status and capitalization disputes tied to that status.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q17_FORBEARANCE_OR_DEFERMENT",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q17_FORBEARANCE_OR_DEFERMENT\nDefinition: True when the complaint concerns requesting, entering, exiting, or being mishandled in forbearance or deferment.\nInclude: Include paused-payment status and capitalization disputes tied to that status.\nExclude: Exclude general hardship with no forbearance or deferment request.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect forbearance or deferment issues",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when foreclosure, repossession, eviction after foreclosure, or seizure of collateral is threatened or undertaken.",
+    "distinct_task_reason": "Detect foreclosure or repossession threats/actions",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude generic delinquency collection with no collateral-seizure action.",
+    "family": "loan_hardship",
+    "inclusions": "Include allegedly wrongful foreclosure scheduling.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q18_FORECLOSURE_OR_REPOSSESSION",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q18_FORECLOSURE_OR_REPOSSESSION\nDefinition: True when foreclosure, repossession, eviction after foreclosure, or seizure of collateral is threatened or undertaken.\nInclude: Include allegedly wrongful foreclosure scheduling.\nExclude: Exclude generic delinquency collection with no collateral-seizure action.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect foreclosure or repossession threats/actions",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint concerns an application for loan modification, loss mitigation, workout, or repayment plan.",
+    "distinct_task_reason": "Detect loan-modification or loss-mitigation issues",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude routine refinancing with no hardship or mitigation process.",
+    "family": "loan_hardship",
+    "inclusions": "Include dual-tracking and repeated-document requests during review.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q19_LOAN_MODIFICATION_OR_LOSS_MITIGATION",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q19_LOAN_MODIFICATION_OR_LOSS_MITIGATION\nDefinition: True when the complaint concerns an application for loan modification, loss mitigation, workout, or repayment plan.\nInclude: Include dual-tracking and repeated-document requests during review.\nExclude: Exclude routine refinancing with no hardship or mitigation process.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect loan-modification or loss-mitigation issues",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the disputed product or described obligation is a student loan and the issue concerns its servicing or repayment.",
+    "distinct_task_reason": "Detect student-loan servicing problems",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude non-student personal, mortgage, and auto loans.",
+    "family": "loan_hardship",
+    "inclusions": "Include income-driven repayment and school-related loan discharge processing.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q20_STUDENT_LOAN_SERVICING",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q20_STUDENT_LOAN_SERVICING\nDefinition: True when the disputed product or described obligation is a student loan and the issue concerns its servicing or repayment.\nInclude: Include income-driven repayment and school-related loan discharge processing.\nExclude: Exclude non-student personal, mortgage, and auto loans.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect student-loan servicing problems",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer says the collected debt is not theirs, was paid, discharged, or otherwise not owed.",
+    "distinct_task_reason": "Detect collection of debt alleged not owed",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude disputes only about collection tone while accepting the debt.",
+    "family": "debt_collection",
+    "inclusions": "Include wrong-person and already-settled debt claims.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q21_DEBT_NOT_OWED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q21_DEBT_NOT_OWED\nDefinition: True when the consumer says the collected debt is not theirs, was paid, discharged, or otherwise not owed.\nInclude: Include wrong-person and already-settled debt claims.\nExclude: Exclude disputes only about collection tone while accepting the debt.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect collection of debt alleged not owed",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer requested validation or proof of debt and says adequate documentation was not provided.",
+    "distinct_task_reason": "Detect failure to validate debt",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a bare assertion that debt is wrong with no validation request.",
+    "family": "debt_collection",
+    "inclusions": "Include unverifiable amount or ownership allegations.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q22_INSUFFICIENT_DEBT_VALIDATION",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q22_INSUFFICIENT_DEBT_VALIDATION\nDefinition: True when the consumer requested validation or proof of debt and says adequate documentation was not provided.\nInclude: Include unverifiable amount or ownership allegations.\nExclude: Exclude a bare assertion that debt is wrong with no validation request.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect failure to validate debt",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the narrative alleges repeated, excessive, or continued collection calls/messages.",
+    "distinct_task_reason": "Detect excessive repeated collection contact",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a single collection notice.",
+    "family": "debt_collection",
+    "inclusions": "Include contact continuing after a stop-contact request.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q23_REPEATED_COLLECTION_CONTACT",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q23_REPEATED_COLLECTION_CONTACT\nDefinition: True when the narrative alleges repeated, excessive, or continued collection calls/messages.\nInclude: Include contact continuing after a stop-contact request.\nExclude: Exclude a single collection notice.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect excessive repeated collection contact",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the collector allegedly harassed, insulted, intimidated, or made threats.",
+    "distinct_task_reason": "Detect abusive collection conduct",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude polite repeated contact without abusive conduct.",
+    "family": "debt_collection",
+    "inclusions": "Include threats of arrest or legally impossible consequences.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q24_COLLECTION_HARASSMENT_OR_THREATS",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q24_COLLECTION_HARASSMENT_OR_THREATS\nDefinition: True when the collector allegedly harassed, insulted, intimidated, or made threats.\nInclude: Include threats of arrest or legally impossible consequences.\nExclude: Exclude polite repeated contact without abusive conduct.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect abusive collection conduct",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when debt information was allegedly disclosed to family, coworkers, an employer, or another unauthorized third party.",
+    "distinct_task_reason": "Detect disclosure of debt to third parties",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude ordinary contact made only to the consumer.",
+    "family": "debt_collection",
+    "inclusions": "Include messages that reveal the collection purpose.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q25_THIRD_PARTY_COLLECTION_DISCLOSURE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q25_THIRD_PARTY_COLLECTION_DISCLOSURE\nDefinition: True when debt information was allegedly disclosed to family, coworkers, an employer, or another unauthorized third party.\nInclude: Include messages that reveal the collection purpose.\nExclude: Exclude ordinary contact made only to the consumer.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect disclosure of debt to third parties",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer repeatedly could not reach a person or was trapped in automated service without resolution.",
+    "distinct_task_reason": "Detect inability to reach competent human support",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a complaint about an unfavorable answer after successful human contact.",
+    "family": "service_process",
+    "inclusions": "Include disconnected calls and refusal to transfer to a specialist.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q26_UNREACHABLE_HUMAN_SUPPORT",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q26_UNREACHABLE_HUMAN_SUPPORT\nDefinition: True when the consumer repeatedly could not reach a person or was trapped in automated service without resolution.\nInclude: Include disconnected calls and refusal to transfer to a specialist.\nExclude: Exclude a complaint about an unfavorable answer after successful human contact.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect inability to reach competent human support",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when different representatives or communications gave materially conflicting information.",
+    "distinct_task_reason": "Detect inconsistent instructions or explanations",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a single incorrect statement with no identified inconsistency.",
+    "family": "service_process",
+    "inclusions": "Include contradictory balances, requirements, or promised next steps.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q27_CONTRADICTORY_INFORMATION",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q27_CONTRADICTORY_INFORMATION\nDefinition: True when different representatives or communications gave materially conflicting information.\nInclude: Include contradictory balances, requirements, or promised next steps.\nExclude: Exclude a single incorrect statement with no identified inconsistency.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect inconsistent instructions or explanations",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when submitted documents were lost, not recorded, or repeatedly requested despite prior submission.",
+    "distinct_task_reason": "Detect document-handling failure",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a first-time request for documents.",
+    "family": "service_process",
+    "inclusions": "Include application paperwork and identity documents.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q28_DOCUMENTS_LOST_OR_REPEATEDLY_REQUESTED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q28_DOCUMENTS_LOST_OR_REPEATEDLY_REQUESTED\nDefinition: True when submitted documents were lost, not recorded, or repeatedly requested despite prior submission.\nInclude: Include application paperwork and identity documents.\nExclude: Exclude a first-time request for documents.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect document-handling failure",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint centers on an unusually long delay in processing a payment, application, transfer, dispute, or request.",
+    "distinct_task_reason": "Detect material processing delays",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a denial or wrong outcome with no delay allegation.",
+    "family": "service_process",
+    "inclusions": "Include missed stated deadlines.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q29_EXCESSIVE_PROCESSING_DELAY",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q29_EXCESSIVE_PROCESSING_DELAY\nDefinition: True when the complaint centers on an unusually long delay in processing a payment, application, transfer, dispute, or request.\nInclude: Include missed stated deadlines.\nExclude: Exclude a denial or wrong outcome with no delay allegation.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect material processing delays",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer says earlier complaints, escalations, or promised follow-up failed to resolve the issue.",
+    "distinct_task_reason": "Detect unresolved prior escalation",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a first contact with no prior escalation.",
+    "family": "service_process",
+    "inclusions": "Include multiple contacts followed by no corrective action.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q30_PRIOR_COMPLAINT_UNRESOLVED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q30_PRIOR_COMPLAINT_UNRESOLVED\nDefinition: True when the consumer says earlier complaints, escalations, or promised follow-up failed to resolve the issue.\nInclude: Include multiple contacts followed by no corrective action.\nExclude: Exclude a first contact with no prior escalation.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect unresolved prior escalation",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer explicitly requests a refund, reimbursement, charge reversal, or return of funds.",
+    "distinct_task_reason": "Detect requested refund or reversal",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude narratives that only ask for information or explanation.",
+    "family": "remedy_impact",
+    "inclusions": "Include requests for disputed fees or transactions to be reversed.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q31_REFUND_OR_REVERSAL_REQUESTED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q31_REFUND_OR_REVERSAL_REQUESTED\nDefinition: True when the consumer explicitly requests a refund, reimbursement, charge reversal, or return of funds.\nInclude: Include requests for disputed fees or transactions to be reversed.\nExclude: Exclude narratives that only ask for information or explanation.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect requested refund or reversal",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when a refund or reimbursement was allegedly promised or approved but not received.",
+    "distinct_task_reason": "Detect missing promised refund",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a newly requested refund with no prior promise.",
+    "family": "remedy_impact",
+    "inclusions": "Include partial or delayed promised credits.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q32_PROMISED_REFUND_NOT_RECEIVED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q32_PROMISED_REFUND_NOT_RECEIVED\nDefinition: True when a refund or reimbursement was allegedly promised or approved but not received.\nInclude: Include partial or delayed promised credits.\nExclude: Exclude a newly requested refund with no prior promise.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect missing promised refund",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the requested remedy is correction of an account balance, payment history, credit record, ownership, or status.",
+    "distinct_task_reason": "Detect requested correction of records",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude requests limited to monetary refund with no record correction.",
+    "family": "remedy_impact",
+    "inclusions": "Include removal of inaccurate derogatory information.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q33_ACCOUNT_OR_RECORD_CORRECTION_REQUESTED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q33_ACCOUNT_OR_RECORD_CORRECTION_REQUESTED\nDefinition: True when the requested remedy is correction of an account balance, payment history, credit record, ownership, or status.\nInclude: Include removal of inaccurate derogatory information.\nExclude: Exclude requests limited to monetary refund with no record correction.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect requested correction of records",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer mentions filing or threatening a lawsuit, regulator complaint, arbitration, attorney action, or police report.",
+    "distinct_task_reason": "Detect threatened or initiated formal action",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude a general statement that conduct is illegal without an action or threat.",
+    "family": "remedy_impact",
+    "inclusions": "Include an already-filed formal action.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q34_LEGAL_OR_REGULATORY_ACTION_MENTIONED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q34_LEGAL_OR_REGULATORY_ACTION_MENTIONED\nDefinition: True when the consumer mentions filing or threatening a lawsuit, regulator complaint, arbitration, attorney action, or police report.\nInclude: Include an already-filed formal action.\nExclude: Exclude a general statement that conduct is illegal without an action or threat.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect threatened or initiated formal action",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the narrative describes a concrete financial consequence beyond the disputed amount, such as lost funds, penalties, denied credit, or damaged ability to pay.",
+    "distinct_task_reason": "Detect explicit consequential financial harm",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude inconvenience alone.",
+    "family": "remedy_impact",
+    "inclusions": "Include explicit dollar loss or downstream fee/credit harm.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q35_QUANTIFIED_FINANCIAL_HARM",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q35_QUANTIFIED_FINANCIAL_HARM\nDefinition: True when the narrative describes a concrete financial consequence beyond the disputed amount, such as lost funds, penalties, denied credit, or damaged ability to pay.\nInclude: Include explicit dollar loss or downstream fee/credit harm.\nExclude: Exclude inconvenience alone.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect explicit consequential financial harm",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer explicitly says the issue has been resolved or satisfactory corrective action was completed.",
+    "distinct_task_reason": "Detect an issue stated as resolved",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude promises to resolve, pending fixes, or partial relief still disputed.",
+    "family": "status_context",
+    "inclusions": "Include full restoration or completed refund acknowledged by the consumer.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q36_ISSUE_REPORTED_RESOLVED",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q36_ISSUE_REPORTED_RESOLVED\nDefinition: True when the consumer explicitly says the issue has been resolved or satisfactory corrective action was completed.\nInclude: Include full restoration or completed refund acknowledged by the consumer.\nExclude: Exclude promises to resolve, pending fixes, or partial relief still disputed.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect an issue stated as resolved",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the underlying complaint concerns goods or services not delivered, defective, misrepresented, or cancelled by a merchant.",
+    "distinct_task_reason": "Detect merchant goods/service disputes",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude account takeover or unauthorized use unrelated to merchant performance.",
+    "family": "status_context",
+    "inclusions": "Include chargeback disputes based on merchant performance.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q37_MERCHANT_QUALITY_OR_DELIVERY_DISPUTE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q37_MERCHANT_QUALITY_OR_DELIVERY_DISPUTE\nDefinition: True when the underlying complaint concerns goods or services not delivered, defective, misrepresented, or cancelled by a merchant.\nInclude: Include chargeback disputes based on merchant performance.\nExclude: Exclude account takeover or unauthorized use unrelated to merchant performance.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect merchant goods/service disputes",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the consumer describes being deceived or manipulated into sending money, credentials, or authorization to a scammer.",
+    "distinct_task_reason": "Detect consumer deception by a scammer",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude transactions made without any consumer participation or deception.",
+    "family": "status_context",
+    "inclusions": "Include impersonation and romance/investment scams.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q38_SCAM_OR_SOCIAL_ENGINEERING",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q38_SCAM_OR_SOCIAL_ENGINEERING\nDefinition: True when the consumer describes being deceived or manipulated into sending money, credentials, or authorization to a scammer.\nInclude: Include impersonation and romance/investment scams.\nExclude: Exclude transactions made without any consumer participation or deception.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect consumer deception by a scammer",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when active duty, deployment, veteran status, military protections, or service-related relocation materially relates to the complaint.",
+    "distinct_task_reason": "Detect military-service related circumstances",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude incidental military words unrelated to the consumer's circumstances.",
+    "family": "status_context",
+    "inclusions": "Include Servicemembers Civil Relief Act issues.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q39_MILITARY_SERVICE_CONTEXT",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q39_MILITARY_SERVICE_CONTEXT\nDefinition: True when active duty, deployment, veteran status, military protections, or service-related relocation materially relates to the complaint.\nInclude: Include Servicemembers Civil Relief Act issues.\nExclude: Exclude incidental military words unrelated to the consumer's circumstances.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect military-service related circumstances",
+    "system_instruction": null
+  },
+  {
+    "definition": "True when the complaint concerns a deceased account holder, estate, executor, survivor, or post-death account/debt handling.",
+    "distinct_task_reason": "Detect deceased-consumer or estate handling",
+    "eligibility": "required exactly when a nonempty eligible narrative is present",
+    "exclusions": "Exclude figurative uses of death or unrelated bereavement.",
+    "family": "status_context",
+    "inclusions": "Include attempts to close or correct accounts after death.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value; optional outer JSON fence stripped",
+    "query_id": "Q40_DECEASED_CONSUMER_OR_ESTATE",
+    "required_fields": "Consumer complaint narrative",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "Classify one public CFPB complaint narrative. Use only the supplied narrative and the frozen query definition. Return exactly one JSON object {\"value\":true} or {\"value\":false}; do not add keys or prose.\n\nQuery ID: Q40_DECEASED_CONSUMER_OR_ESTATE\nDefinition: True when the complaint concerns a deceased account holder, estate, executor, survivor, or post-death account/debt handling.\nInclude: Include attempts to close or correct accounts after death.\nExclude: Exclude figurative uses of death or unrelated bereavement.\n\nNarrative:\n{TEXT}\n",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Detect deceased-consumer or estate handling",
+    "system_instruction": null
+  }
+]

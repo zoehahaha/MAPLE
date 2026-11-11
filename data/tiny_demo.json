@@ -1,0 +1,27 @@
+{
+  "row_ids": ["r01","r02","r03","r04","r05","r06","r07","r08","r09","r10","r11","r12","r13","r14","r15","r16","r17","r18","r19","r20"],
+  "query_ids": ["q_music","q_audio","q_weather","q_outdoors"],
+  "texts": {
+    "r01":"play jazz music", "r02":"start a rock playlist", "r03":"play classical music",
+    "r04":"music for dinner", "r05":"start the audio track", "r06":"play songs by an artist",
+    "r07":"listen to a podcast", "r08":"resume my music", "r09":"outdoor trail near me",
+    "r10":"book a table", "r11":"play a pop song", "r12":"audio for my commute",
+    "r13":"start music now", "r14":"music biography question", "r15":"weather tomorrow",
+    "r16":"will it rain outside", "r17":"outdoor weather forecast", "r18":"temperature this weekend",
+    "r19":"snow forecast for hiking", "r20":"weather for an outdoor trip"
+  },
+  "answers": {
+    "q_music": {"r01":true,"r02":true,"r03":true,"r04":true,"r05":true,"r06":true,"r07":true,"r08":true,"r09":false,"r10":false,"r11":true,"r12":true,"r13":true,"r14":true,"r15":false,"r16":false,"r17":false,"r18":false,"r19":false,"r20":false},
+    "q_audio": {"r01":true,"r02":true,"r03":true,"r04":true,"r05":true,"r06":true,"r07":true,"r08":true,"r09":false,"r10":false,"r11":true,"r12":true,"r13":true,"r14":false,"r15":false,"r16":false,"r17":false,"r18":false,"r19":false,"r20":false},
+    "q_weather": {"r01":false,"r02":false,"r03":false,"r04":false,"r05":false,"r06":false,"r07":false,"r08":false,"r09":false,"r10":false,"r11":false,"r12":false,"r13":false,"r14":false,"r15":true,"r16":true,"r17":true,"r18":true,"r19":true,"r20":true},
+    "q_outdoors": {"r01":false,"r02":false,"r03":false,"r04":false,"r05":false,"r06":false,"r07":false,"r08":false,"r09":true,"r10":false,"r11":false,"r12":false,"r13":false,"r14":false,"r15":true,"r16":true,"r17":true,"r18":true,"r19":true,"r20":true}
+  },
+  "discovery_order": ["r01","r15","r02","r16","r03","r17","r04","r18","r05","r19","r06","r20","r07","r09","r08","r10","r11","r12","r13","r14"],
+  "score_order": ["r20","r14","r19","r13","r18","r12","r17","r11","r16","r10","r15","r09","r08","r07","r06","r05","r04","r03","r02","r01"],
+  "certification_orders": {
+    "q_music": ["r10","r01","r20","r02","r19","r03","r18","r04","r17","r05","r16","r06","r15","r07","r14","r08","r13","r09","r12","r11"],
+    "q_audio": ["r11","r20","r01","r19","r02","r18","r03","r17","r04","r16","r05","r15","r06","r14","r07","r13","r08","r12","r09","r10"],
+    "q_weather": ["r01","r20","r02","r19","r03","r18","r04","r17","r05","r16","r06","r15","r07","r14","r08","r13","r09","r12","r10","r11"],
+    "q_outdoors": ["r20","r01","r19","r02","r18","r03","r17","r04","r16","r05","r15","r06","r14","r07","r13","r08","r12","r09","r11","r10"]
+  }
+}

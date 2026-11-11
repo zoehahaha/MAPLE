@@ -1,0 +1,5 @@
+{
+  "oracle": "document leaf-label membership",
+  "noise": 0,
+  "rule": "answer is true exactly when the record leaf_label is in the query accepted_leaf_labels"
+}

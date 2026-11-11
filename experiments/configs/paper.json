@@ -1,0 +1,21 @@
+{
+  "protocol": "PREP_PAPER_FILTER_V1",
+  "precision_target": 0.9,
+  "recall_target": 0.9,
+  "alpha_per_query": 0.05,
+  "discovery_fraction_per_round": 0.02,
+  "discovery_maximum_rounds": 8,
+  "discovery_minimum_rounds": 4,
+  "discovery_consecutive_passes": 2,
+  "scoring_example_fraction": 0.05,
+  "guard_base_feature_cap": 24,
+  "guard_single_cap": 12,
+  "guard_conjunction_frontier": 6,
+  "guard_per_target_cap": 8,
+  "monte_carlo_scenarios": 32,
+  "scenario_namespace": "PREP_PAPER_FILTER_V1",
+  "ggr_shortlist": 8,
+  "ggr_complete_score_cap": 32,
+  "ggr_move_cap": 8,
+  "control_requests": 7
+}

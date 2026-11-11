@@ -1,0 +1,15 @@
+{
+  "rows": 2000,
+  "issued_queries": 47,
+  "distinct_query_texts": 46,
+  "required_outputs": 94000,
+  "usage_coverage": 92000,
+  "prompt_tokens": 18446254,
+  "completion_tokens": 266958,
+  "token_status": "PUBLISHED_MATRIX_AGGREGATE_FOR_46_DISTINCT_REQUESTS",
+  "exact_duplicate_query": {
+    "H1": "A1"
+  },
+  "oracle": "llama3.1:8b-instruct-q4_K_M",
+  "prompt_version": "semfilter-v1"
+}

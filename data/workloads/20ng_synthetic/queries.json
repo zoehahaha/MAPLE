@@ -1,0 +1,1817 @@
+[
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 1,
+    "name": "group:motor vehicles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "704314e36958",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM001_704314e36958",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 2,
+    "name": "group:religion#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "d42fd1c68917",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of religion.",
+    "prompt_template": null,
+    "query_id": "SIM002_d42fd1c68917",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "religious debate"
+    ],
+    "instance_index": 3,
+    "name": "leaf:religious debate#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "427ca890e9cc",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about religious debate.",
+    "prompt_template": null,
+    "query_id": "SIM003_427ca890e9cc",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 4,
+    "name": "group:politics#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "285ec07d935d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses politics.",
+    "prompt_template": null,
+    "query_id": "SIM004_285ec07d935d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "gun control",
+      "medicine"
+    ],
+    "instance_index": 5,
+    "name": "union:gun control|medicine#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "3cffb3125c69",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about gun control or about medicine.",
+    "prompt_template": null,
+    "query_id": "SIM005_3cffb3125c69",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 6,
+    "name": "group:sports#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c0742f121f56",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about sports.",
+    "prompt_template": null,
+    "query_id": "SIM006_c0742f121f56",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "motorcycles"
+    ],
+    "instance_index": 7,
+    "name": "leaf:motorcycles#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ba625a0ce83c",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM007_ba625a0ce83c",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 8,
+    "name": "group:religion#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5dd2fd0ea825",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses religion.",
+    "prompt_template": null,
+    "query_id": "SIM008_5dd2fd0ea825",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "motorcycles"
+    ],
+    "instance_index": 9,
+    "name": "leaf:motorcycles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "00a7f3da63e4",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM009_00a7f3da63e4",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "political debate"
+    ],
+    "instance_index": 10,
+    "name": "union:baseball|political debate#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c0bc6fdeb85c",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either baseball or political debate.",
+    "prompt_template": null,
+    "query_id": "SIM010_c0bc6fdeb85c",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 11,
+    "name": "group:science#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "674349998ae3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses science.",
+    "prompt_template": null,
+    "query_id": "SIM011_674349998ae3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "hockey"
+    ],
+    "instance_index": 12,
+    "name": "leaf:hockey#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "082a0c5ac6e4",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses hockey.",
+    "prompt_template": null,
+    "query_id": "SIM012_082a0c5ac6e4",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "religious debate"
+    ],
+    "instance_index": 13,
+    "name": "leaf:religious debate#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "130336d9b974",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to religious debate.",
+    "prompt_template": null,
+    "query_id": "SIM013_130336d9b974",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "political debate"
+    ],
+    "instance_index": 14,
+    "name": "leaf:political debate#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "b56e3d8cca3f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about political debate.",
+    "prompt_template": null,
+    "query_id": "SIM014_b56e3d8cca3f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 15,
+    "name": "leaf:items for sale#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "2a6fb0a2dd65",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM015_2a6fb0a2dd65",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity"
+    ],
+    "instance_index": 16,
+    "name": "leaf:Christianity#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f4c53baefbfa",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of Christianity.",
+    "prompt_template": null,
+    "query_id": "SIM016_f4c53baefbfa",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "electronics",
+      "hockey"
+    ],
+    "instance_index": 17,
+    "name": "union:electronics|hockey#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "6d30e0940eae",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about electronics or about hockey.",
+    "prompt_template": null,
+    "query_id": "SIM017_6d30e0940eae",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 18,
+    "name": "group:science#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5209493e1210",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to science.",
+    "prompt_template": null,
+    "query_id": "SIM018_5209493e1210",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 19,
+    "name": "group:computers#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "a51bf0dbd736",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses computers.",
+    "prompt_template": null,
+    "query_id": "SIM019_a51bf0dbd736",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "items for sale"
+    ],
+    "instance_index": 20,
+    "name": "union:Macintosh hardware|items for sale#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "12c40bc16a43",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either Macintosh hardware or items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM020_12c40bc16a43",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 21,
+    "name": "group:motor vehicles#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f5d21c61b4ff",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM021_f5d21c61b4ff",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 22,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM022_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "religious debate"
+    ],
+    "instance_index": 23,
+    "name": "leaf:religious debate#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "b5f4f94eac10",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of religious debate.",
+    "prompt_template": null,
+    "query_id": "SIM023_b5f4f94eac10",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "religious debate"
+    ],
+    "instance_index": 24,
+    "name": "leaf:religious debate#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "130336d9b974",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to religious debate.",
+    "prompt_template": null,
+    "query_id": "SIM024_130336d9b974",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 25,
+    "name": "group:politics#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "6de427018332",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of politics.",
+    "prompt_template": null,
+    "query_id": "SIM025_6de427018332",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 26,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM026_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 27,
+    "name": "group:science#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "674349998ae3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses science.",
+    "prompt_template": null,
+    "query_id": "SIM027_674349998ae3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 28,
+    "name": "group:sports#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c0742f121f56",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about sports.",
+    "prompt_template": null,
+    "query_id": "SIM028_c0742f121f56",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "electronics"
+    ],
+    "instance_index": 29,
+    "name": "leaf:electronics#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c377bf344ac0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses electronics.",
+    "prompt_template": null,
+    "query_id": "SIM029_c377bf344ac0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 30,
+    "name": "group:computers#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "beb9f82ac1f0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about computers.",
+    "prompt_template": null,
+    "query_id": "SIM030_beb9f82ac1f0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 31,
+    "name": "group:sports#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "bbc4eaf3816f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses sports.",
+    "prompt_template": null,
+    "query_id": "SIM031_bbc4eaf3816f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 32,
+    "name": "leaf:items for sale#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5bae58848556",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM032_5bae58848556",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 33,
+    "name": "group:politics#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ecb34bea77a5",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to politics.",
+    "prompt_template": null,
+    "query_id": "SIM033_ecb34bea77a5",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 34,
+    "name": "group:science#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c87145cf2fb0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about science.",
+    "prompt_template": null,
+    "query_id": "SIM034_c87145cf2fb0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 35,
+    "name": "group:motor vehicles#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f5d21c61b4ff",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM035_f5d21c61b4ff",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 36,
+    "name": "group:computers#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f9ed21379390",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of computers.",
+    "prompt_template": null,
+    "query_id": "SIM036_f9ed21379390",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 37,
+    "name": "group:motor vehicles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "704314e36958",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM037_704314e36958",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 38,
+    "name": "group:computers#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "a51bf0dbd736",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses computers.",
+    "prompt_template": null,
+    "query_id": "SIM038_a51bf0dbd736",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 39,
+    "name": "group:religion#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5dd2fd0ea825",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses religion.",
+    "prompt_template": null,
+    "query_id": "SIM039_5dd2fd0ea825",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 40,
+    "name": "group:computers#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "beb9f82ac1f0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about computers.",
+    "prompt_template": null,
+    "query_id": "SIM040_beb9f82ac1f0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "cars"
+    ],
+    "instance_index": 41,
+    "name": "union:baseball|cars#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "901be6f8cd27",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about baseball or about cars.",
+    "prompt_template": null,
+    "query_id": "SIM041_901be6f8cd27",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "atheism"
+    ],
+    "instance_index": 42,
+    "name": "leaf:atheism#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "8d39db80675b",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of atheism.",
+    "prompt_template": null,
+    "query_id": "SIM042_8d39db80675b",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 43,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM043_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 44,
+    "name": "group:motor vehicles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "704314e36958",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM044_704314e36958",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "electronics"
+    ],
+    "instance_index": 45,
+    "name": "leaf:electronics#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5b6d54ae4762",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about electronics.",
+    "prompt_template": null,
+    "query_id": "SIM045_5b6d54ae4762",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 46,
+    "name": "group:motor vehicles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "704314e36958",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM046_704314e36958",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 47,
+    "name": "group:sports#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "bbc4eaf3816f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses sports.",
+    "prompt_template": null,
+    "query_id": "SIM047_bbc4eaf3816f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 48,
+    "name": "group:motor vehicles#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f0ad8a5a8f54",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM048_f0ad8a5a8f54",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "religious debate"
+    ],
+    "instance_index": 49,
+    "name": "leaf:religious debate#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "130336d9b974",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to religious debate.",
+    "prompt_template": null,
+    "query_id": "SIM049_130336d9b974",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 50,
+    "name": "group:motor vehicles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c84964dc39bb",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM050_c84964dc39bb",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 51,
+    "name": "group:religion#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "309a0c1dcdc3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about religion.",
+    "prompt_template": null,
+    "query_id": "SIM051_309a0c1dcdc3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 52,
+    "name": "leaf:items for sale#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "2a6fb0a2dd65",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM052_2a6fb0a2dd65",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "cars"
+    ],
+    "instance_index": 53,
+    "name": "union:Macintosh hardware|cars#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "8c3db6b670a9",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either Macintosh hardware or cars.",
+    "prompt_template": null,
+    "query_id": "SIM053_8c3db6b670a9",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars"
+    ],
+    "instance_index": 54,
+    "name": "leaf:cars#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0491d87bf341",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of cars.",
+    "prompt_template": null,
+    "query_id": "SIM054_0491d87bf341",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "atheism",
+      "motorcycles"
+    ],
+    "instance_index": 55,
+    "name": "union:atheism|motorcycles#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c6325039cdb8",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either atheism or motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM055_c6325039cdb8",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball"
+    ],
+    "instance_index": 56,
+    "name": "leaf:baseball#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "9c7673d93715",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about baseball.",
+    "prompt_template": null,
+    "query_id": "SIM056_9c7673d93715",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars"
+    ],
+    "instance_index": 57,
+    "name": "leaf:cars#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "6c21452c4362",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about cars.",
+    "prompt_template": null,
+    "query_id": "SIM057_6c21452c4362",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "hockey",
+      "items for sale"
+    ],
+    "instance_index": 58,
+    "name": "union:hockey|items for sale#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "07efd9402b00",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about hockey or about items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM058_07efd9402b00",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 59,
+    "name": "group:politics#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ac3fcdd36a06",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about politics.",
+    "prompt_template": null,
+    "query_id": "SIM059_ac3fcdd36a06",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 60,
+    "name": "group:motor vehicles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c84964dc39bb",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM060_c84964dc39bb",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "the Microsoft Windows operating system"
+    ],
+    "instance_index": 61,
+    "name": "leaf:the Microsoft Windows operating system#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "474805d06ca2",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about the Microsoft Windows operating system.",
+    "prompt_template": null,
+    "query_id": "SIM061_474805d06ca2",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "atheism",
+      "baseball"
+    ],
+    "instance_index": 62,
+    "name": "union:atheism|baseball#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "1677542565cc",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either atheism or baseball.",
+    "prompt_template": null,
+    "query_id": "SIM062_1677542565cc",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity"
+    ],
+    "instance_index": 63,
+    "name": "leaf:Christianity#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f4c53baefbfa",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of Christianity.",
+    "prompt_template": null,
+    "query_id": "SIM063_f4c53baefbfa",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 64,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM064_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 65,
+    "name": "group:motor vehicles#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f0ad8a5a8f54",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM065_f0ad8a5a8f54",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 66,
+    "name": "group:computers#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "beb9f82ac1f0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about computers.",
+    "prompt_template": null,
+    "query_id": "SIM066_beb9f82ac1f0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "electronics",
+      "motorcycles"
+    ],
+    "instance_index": 67,
+    "name": "union:electronics|motorcycles#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "4cf17a7d70df",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either electronics or motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM067_4cf17a7d70df",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "gun control"
+    ],
+    "instance_index": 68,
+    "name": "union:baseball|gun control#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "609f1ea14e3d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either baseball or gun control.",
+    "prompt_template": null,
+    "query_id": "SIM068_609f1ea14e3d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "hockey"
+    ],
+    "instance_index": 69,
+    "name": "union:Middle East affairs|hockey#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "122fce3268c7",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about Middle East affairs or about hockey.",
+    "prompt_template": null,
+    "query_id": "SIM069_122fce3268c7",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 70,
+    "name": "group:computers#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "92cb80ef31e5",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to computers.",
+    "prompt_template": null,
+    "query_id": "SIM070_92cb80ef31e5",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 71,
+    "name": "group:religion#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "309a0c1dcdc3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about religion.",
+    "prompt_template": null,
+    "query_id": "SIM071_309a0c1dcdc3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 72,
+    "name": "group:science#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "bf675a3c3cb0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of science.",
+    "prompt_template": null,
+    "query_id": "SIM072_bf675a3c3cb0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "gun control",
+      "items for sale"
+    ],
+    "instance_index": 73,
+    "name": "union:gun control|items for sale#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "b3101c3e26a5",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either gun control or items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM073_b3101c3e26a5",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 74,
+    "name": "group:computers#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f9ed21379390",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of computers.",
+    "prompt_template": null,
+    "query_id": "SIM074_f9ed21379390",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 75,
+    "name": "group:motor vehicles#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f0ad8a5a8f54",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM075_f0ad8a5a8f54",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 76,
+    "name": "group:science#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5209493e1210",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to science.",
+    "prompt_template": null,
+    "query_id": "SIM076_5209493e1210",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 77,
+    "name": "leaf:items for sale#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "2a6fb0a2dd65",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM077_2a6fb0a2dd65",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "computer graphics"
+    ],
+    "instance_index": 78,
+    "name": "leaf:computer graphics#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "b85f7ce6b920",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of computer graphics.",
+    "prompt_template": null,
+    "query_id": "SIM078_b85f7ce6b920",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "the X Window System"
+    ],
+    "instance_index": 79,
+    "name": "leaf:the X Window System#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "2267ed9a720e",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses the X Window System.",
+    "prompt_template": null,
+    "query_id": "SIM079_2267ed9a720e",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "medicine"
+    ],
+    "instance_index": 80,
+    "name": "leaf:medicine#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "eb314daa9d23",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about medicine.",
+    "prompt_template": null,
+    "query_id": "SIM080_eb314daa9d23",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "hockey"
+    ],
+    "instance_index": 81,
+    "name": "leaf:hockey#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "9365cc08e437",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of hockey.",
+    "prompt_template": null,
+    "query_id": "SIM081_9365cc08e437",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 82,
+    "name": "group:motor vehicles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c84964dc39bb",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM082_c84964dc39bb",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "medicine"
+    ],
+    "instance_index": 83,
+    "name": "union:Middle East affairs|medicine#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f959f7e6378e",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either Middle East affairs or medicine.",
+    "prompt_template": null,
+    "query_id": "SIM083_f959f7e6378e",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 84,
+    "name": "group:sports#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c0742f121f56",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about sports.",
+    "prompt_template": null,
+    "query_id": "SIM084_c0742f121f56",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 85,
+    "name": "leaf:items for sale#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "21da27d0b81d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM085_21da27d0b81d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "political debate"
+    ],
+    "instance_index": 86,
+    "name": "union:Christianity|political debate#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "3279c8b05c28",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about Christianity or about political debate.",
+    "prompt_template": null,
+    "query_id": "SIM086_3279c8b05c28",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 87,
+    "name": "group:motor vehicles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c84964dc39bb",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM087_c84964dc39bb",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball"
+    ],
+    "instance_index": 88,
+    "name": "leaf:baseball#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "9c7673d93715",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about baseball.",
+    "prompt_template": null,
+    "query_id": "SIM088_9c7673d93715",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars"
+    ],
+    "instance_index": 89,
+    "name": "leaf:cars#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "12010bccaf3a",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses cars.",
+    "prompt_template": null,
+    "query_id": "SIM089_12010bccaf3a",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 90,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM090_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "computer graphics",
+      "gun control"
+    ],
+    "instance_index": 91,
+    "name": "union:computer graphics|gun control#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "46bb70b2dc4e",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either computer graphics or gun control.",
+    "prompt_template": null,
+    "query_id": "SIM091_46bb70b2dc4e",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 92,
+    "name": "group:religion#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "309a0c1dcdc3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about religion.",
+    "prompt_template": null,
+    "query_id": "SIM092_309a0c1dcdc3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "atheism",
+      "computer graphics"
+    ],
+    "instance_index": 93,
+    "name": "union:atheism|computer graphics#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "9f5304382871",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either atheism or computer graphics.",
+    "prompt_template": null,
+    "query_id": "SIM093_9f5304382871",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "motorcycles",
+      "political debate"
+    ],
+    "instance_index": 94,
+    "name": "union:motorcycles|political debate#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f38b4ef5f03d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either motorcycles or political debate.",
+    "prompt_template": null,
+    "query_id": "SIM094_f38b4ef5f03d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 95,
+    "name": "group:motor vehicles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "704314e36958",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM095_704314e36958",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "political debate"
+    ],
+    "instance_index": 96,
+    "name": "union:cars|political debate#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "d997485055a2",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about cars or about political debate.",
+    "prompt_template": null,
+    "query_id": "SIM096_d997485055a2",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware"
+    ],
+    "instance_index": 97,
+    "name": "leaf:Macintosh hardware#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5bdf1d2ff7f2",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about Macintosh hardware.",
+    "prompt_template": null,
+    "query_id": "SIM097_5bdf1d2ff7f2",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars"
+    ],
+    "instance_index": 98,
+    "name": "leaf:cars#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ea9c4c1c883a",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to cars.",
+    "prompt_template": null,
+    "query_id": "SIM098_ea9c4c1c883a",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 99,
+    "name": "leaf:items for sale#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "21da27d0b81d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM099_21da27d0b81d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "medicine"
+    ],
+    "instance_index": 100,
+    "name": "leaf:medicine#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "71fd49ca9d3c",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of medicine.",
+    "prompt_template": null,
+    "query_id": "SIM100_71fd49ca9d3c",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Macintosh hardware",
+      "PC hardware",
+      "computer graphics",
+      "the Microsoft Windows operating system",
+      "the X Window System"
+    ],
+    "instance_index": 101,
+    "name": "group:computers#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f9ed21379390",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of computers.",
+    "prompt_template": null,
+    "query_id": "SIM101_f9ed21379390",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "PC hardware"
+    ],
+    "instance_index": 102,
+    "name": "leaf:PC hardware#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "9ac251d05c03",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses PC hardware.",
+    "prompt_template": null,
+    "query_id": "SIM102_9ac251d05c03",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars"
+    ],
+    "instance_index": 103,
+    "name": "leaf:cars#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ea9c4c1c883a",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to cars.",
+    "prompt_template": null,
+    "query_id": "SIM103_ea9c4c1c883a",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "items for sale"
+    ],
+    "instance_index": 104,
+    "name": "union:Christianity|items for sale#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "6b65d643cc9f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about Christianity or about items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM104_6b65d643cc9f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 105,
+    "name": "group:politics#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "ecb34bea77a5",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to politics.",
+    "prompt_template": null,
+    "query_id": "SIM105_ecb34bea77a5",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "items for sale"
+    ],
+    "instance_index": 106,
+    "name": "leaf:items for sale#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "21da27d0b81d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM106_21da27d0b81d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "atheism",
+      "cars"
+    ],
+    "instance_index": 107,
+    "name": "union:atheism|cars#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "a5aabbd3147f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either atheism or cars.",
+    "prompt_template": null,
+    "query_id": "SIM107_a5aabbd3147f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "computer graphics"
+    ],
+    "instance_index": 108,
+    "name": "leaf:computer graphics#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "b85f7ce6b920",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of computer graphics.",
+    "prompt_template": null,
+    "query_id": "SIM108_b85f7ce6b920",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "motorcycles"
+    ],
+    "instance_index": 109,
+    "name": "leaf:motorcycles#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "cae304fd7b0d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM109_cae304fd7b0d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "gun control"
+    ],
+    "instance_index": 110,
+    "name": "leaf:gun control#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "10a2a6648ded",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of gun control.",
+    "prompt_template": null,
+    "query_id": "SIM110_10a2a6648ded",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cars",
+      "motorcycles"
+    ],
+    "instance_index": 111,
+    "name": "group:motor vehicles#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "c84964dc39bb",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses motor vehicles.",
+    "prompt_template": null,
+    "query_id": "SIM111_c84964dc39bb",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "hockey",
+      "items for sale"
+    ],
+    "instance_index": 112,
+    "name": "union:hockey|items for sale#u0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "07efd9402b00",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about hockey or about items for sale.",
+    "prompt_template": null,
+    "query_id": "SIM112_07efd9402b00",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 113,
+    "name": "group:religion#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "309a0c1dcdc3",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about religion.",
+    "prompt_template": null,
+    "query_id": "SIM113_309a0c1dcdc3",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "space exploration",
+      "the Microsoft Windows operating system"
+    ],
+    "instance_index": 114,
+    "name": "union:space exploration|the Microsoft Windows operating system#u1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "4d8030a6bdaa",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses either space exploration or the Microsoft Windows operating system.",
+    "prompt_template": null,
+    "query_id": "SIM114_4d8030a6bdaa",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 115,
+    "name": "group:sports#t2",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "0d3e6f0fd58d",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The passage is related to sports.",
+    "prompt_template": null,
+    "query_id": "SIM115_0d3e6f0fd58d",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "baseball",
+      "hockey"
+    ],
+    "instance_index": 116,
+    "name": "group:sports#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "bbc4eaf3816f",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses sports.",
+    "prompt_template": null,
+    "query_id": "SIM116_bbc4eaf3816f",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Middle East affairs",
+      "gun control",
+      "political debate"
+    ],
+    "instance_index": 117,
+    "name": "group:politics#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "6de427018332",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of politics.",
+    "prompt_template": null,
+    "query_id": "SIM117_6de427018332",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "Christianity",
+      "atheism",
+      "religious debate"
+    ],
+    "instance_index": 118,
+    "name": "group:religion#t1",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "5dd2fd0ea825",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This text discusses religion.",
+    "prompt_template": null,
+    "query_id": "SIM118_5dd2fd0ea825",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "cryptography",
+      "electronics",
+      "medicine",
+      "space exploration"
+    ],
+    "instance_index": 119,
+    "name": "group:science#t3",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "bf675a3c3cb0",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "This article covers the topic of science.",
+    "prompt_template": null,
+    "query_id": "SIM119_bf675a3c3cb0",
+    "system_instruction": null
+  },
+  {
+    "accepted_leaf_labels": [
+      "motorcycles"
+    ],
+    "instance_index": 120,
+    "name": "leaf:motorcycles#t0",
+    "oracle_rule": "true iff record.leaf_label is in accepted_leaf_labels; noise=0",
+    "original_query_id": "f15218517438",
+    "parser": "deterministic label-membership Boolean oracle",
+    "predicate": "The document is about motorcycles.",
+    "prompt_template": null,
+    "query_id": "SIM120_f15218517438",
+    "system_instruction": null
+  }
+]

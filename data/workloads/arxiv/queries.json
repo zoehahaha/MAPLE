@@ -1,0 +1,962 @@
+[
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "False for merely using routine statistics or mentioning AI/ML only as background.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when AI/ML is a central method, system, empirical object, or application contribution.",
+    "query_id": "P01_AI_ML",
+    "question": "Does this paper primarily study artificial intelligence or machine learning methods, systems, or applications?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P01_AI_ML]\nQUESTION: Does this paper primarily study artificial intelligence or machine learning methods, systems, or applications?\nPOSITIVE_SEMANTICS: True when AI/ML is a central method, system, empirical object, or application contribution.\nNEGATIVE_SEMANTICS: False for merely using routine statistics or mentioning AI/ML only as background.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports an AI/ML-focused literature index.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "False for generic machine learning without a language task and for non-language signal processing.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when processing, generating, understanding, or modeling human language is central.",
+    "query_id": "P02_NLP",
+    "question": "Does this paper primarily study natural language processing, computational linguistics, speech-language understanding, or language models?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P02_NLP]\nQUESTION: Does this paper primarily study natural language processing, computational linguistics, speech-language understanding, or language models?\nPOSITIVE_SEMANTICS: True when processing, generating, understanding, or modeling human language is central.\nNEGATIVE_SEMANTICS: False for generic machine learning without a language task and for non-language signal processing.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports a language-technology literature stream.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "False for plots used only to present non-visual results and for generic ML with no visual task.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when visual data or visual perception is central to the contribution.",
+    "query_id": "P03_VISION",
+    "question": "Does this paper primarily study computer vision, image understanding, video understanding, or visual pattern recognition?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P03_VISION]\nQUESTION: Does this paper primarily study computer vision, image understanding, video understanding, or visual pattern recognition?\nPOSITIVE_SEMANTICS: True when visual data or visual perception is central to the contribution.\nNEGATIVE_SEMANTICS: False for plots used only to present non-visual results and for generic ML with no visual task.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports a vision literature stream.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "quantitative_foundations",
+    "negative_semantics": "False when mathematics is only routine notation supporting a non-mathematical study.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True for central mathematical definitions, theorems, proofs, structures, or applied mathematical analysis.",
+    "query_id": "P04_MATHEMATICS",
+    "question": "Does this paper primarily contribute to theoretical or applied mathematics?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P04_MATHEMATICS]\nQUESTION: Does this paper primarily contribute to theoretical or applied mathematics?\nPOSITIVE_SEMANTICS: True for central mathematical definitions, theorems, proofs, structures, or applied mathematical analysis.\nNEGATIVE_SEMANTICS: False when mathematics is only routine notation supporting a non-mathematical study.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports a broad mathematical-sciences index.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "quantitative_foundations",
+    "negative_semantics": "False for merely reporting ordinary summary statistics or model accuracy.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when statistical or probabilistic methodology is a central contribution.",
+    "query_id": "P05_STATISTICS",
+    "question": "Does this paper primarily develop or analyze statistical inference, probability, estimation, experimental design, or statistical methodology?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P05_STATISTICS]\nQUESTION: Does this paper primarily develop or analyze statistical inference, probability, estimation, experimental design, or statistical methodology?\nPOSITIVE_SEMANTICS: True when statistical or probabilistic methodology is a central contribution.\nNEGATIVE_SEMANTICS: False for merely reporting ordinary summary statistics or model accuracy.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports a statistics-methodology literature stream.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "quantitative_foundations",
+    "negative_semantics": "False when optimization is only routine model training with no optimization contribution.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when optimization/control formulation, algorithm, theory, or evaluation is central.",
+    "query_id": "P06_OPT_CONTROL",
+    "question": "Does this paper primarily study optimization, operations research, decision theory, control, or dynamical-system control methods?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P06_OPT_CONTROL]\nQUESTION: Does this paper primarily study optimization, operations research, decision theory, control, or dynamical-system control methods?\nPOSITIVE_SEMANTICS: True when optimization/control formulation, algorithm, theory, or evaluation is central.\nNEGATIVE_SEMANTICS: False when optimization is only routine model training with no optimization contribution.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports an optimization-and-control index.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "application_domain",
+    "negative_semantics": "False for purely mathematical work with no substantive physical object and metaphorical uses of physical terms.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when a physical phenomenon, physical theory, astronomical object, or physical experiment is central.",
+    "query_id": "P07_PHYSICAL_SCIENCE",
+    "question": "Does this paper primarily study physics, astronomy, space science, or a physical system?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P07_PHYSICAL_SCIENCE]\nQUESTION: Does this paper primarily study physics, astronomy, space science, or a physical system?\nPOSITIVE_SEMANTICS: True when a physical phenomenon, physical theory, astronomical object, or physical experiment is central.\nNEGATIVE_SEMANTICS: False for purely mathematical work with no substantive physical object and metaphorical uses of physical terms.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports physical-science discovery across methodological categories.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "application_domain",
+    "negative_semantics": "False for generic algorithms illustrated only with incidental biomedical examples.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when a biological organism, clinical question, health outcome, biomedical mechanism, or life-science application is central.",
+    "query_id": "P08_LIFE_HEALTH",
+    "question": "Does this paper primarily study biology, medicine, health, neuroscience, or a biomedical application?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P08_LIFE_HEALTH]\nQUESTION: Does this paper primarily study biology, medicine, health, neuroscience, or a biomedical application?\nPOSITIVE_SEMANTICS: True when a biological organism, clinical question, health outcome, biomedical mechanism, or life-science application is central.\nNEGATIVE_SEMANTICS: False for generic algorithms illustrated only with incidental biomedical examples.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports a life-and-health-science index.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "application_domain",
+    "negative_semantics": "False for generic optimization using only a toy cost metaphor.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "True when an economic/financial system, market, decision, policy, or methodology is central.",
+    "query_id": "P09_ECON_FINANCE",
+    "question": "Does this paper primarily study economics, finance, markets, business, or economic policy?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[P09_ECON_FINANCE]\nQUESTION: Does this paper primarily study economics, finance, markets, business, or economic policy?\nPOSITIVE_SEMANTICS: True when an economic/financial system, market, decision, policy, or methodology is central.\nNEGATIVE_SEMANTICS: False for generic optimization using only a toy cost metaphor.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Supports an economics-and-finance literature stream.",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "Software agents or control simulations with no embodied robotic focus.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Robots, embodied agents, navigation, manipulation, or autonomous physical action are central.",
+    "query_id": "Q10_ROBOTICS_AUTONOMY",
+    "question": "Does the paper primarily study robotics or autonomous embodied systems?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q10_ROBOTICS_AUTONOMY]\nQUESTION: Does the paper primarily study robotics or autonomous embodied systems?\nPOSITIVE_SEMANTICS: Robots, embodied agents, navigation, manipulation, or autonomous physical action are central.\nNEGATIVE_SEMANTICS: Software agents or control simulations with no embodied robotic focus.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "robotics",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "A database or search engine is only used as a source of data.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Storage, query processing, indexing, transactions, retrieval systems, or data platforms are central.",
+    "query_id": "Q11_DATA_SYSTEMS",
+    "question": "Does the paper primarily study databases, data management, information retrieval infrastructure, or data systems?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q11_DATA_SYSTEMS]\nQUESTION: Does the paper primarily study databases, data management, information retrieval infrastructure, or data systems?\nPOSITIVE_SEMANTICS: Storage, query processing, indexing, transactions, retrieval systems, or data platforms are central.\nNEGATIVE_SEMANTICS: A database or search engine is only used as a source of data.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "data systems",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "Security is only a possible downstream concern.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Security guarantees, attacks, defenses, privacy, or cryptographic mechanisms are central.",
+    "query_id": "Q12_SECURITY_PRIVACY",
+    "question": "Does the paper primarily study computer security, privacy, cryptography, or adversarial threats?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q12_SECURITY_PRIVACY]\nQUESTION: Does the paper primarily study computer security, privacy, cryptography, or adversarial threats?\nPOSITIVE_SEMANTICS: Security guarantees, attacks, defenses, privacy, or cryptographic mechanisms are central.\nNEGATIVE_SEMANTICS: Security is only a possible downstream concern.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "security and privacy",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "A distributed platform is only used to run another experiment.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Protocols, distributed coordination, network performance, cloud, or edge systems are central.",
+    "query_id": "Q13_NETWORKS_DISTRIBUTED",
+    "question": "Does the paper primarily study computer networks, distributed systems, cloud systems, or edge computing?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q13_NETWORKS_DISTRIBUTED]\nQUESTION: Does the paper primarily study computer networks, distributed systems, cloud systems, or edge computing?\nPOSITIVE_SEMANTICS: Protocols, distributed coordination, network performance, cloud, or edge systems are central.\nNEGATIVE_SEMANTICS: A distributed platform is only used to run another experiment.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "networks and distributed systems",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "Software is only an implementation vehicle.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Programs, code, compilers, testing, software maintenance, or developer behavior are central.",
+    "query_id": "Q14_SOFTWARE_ENGINEERING",
+    "question": "Does the paper primarily study software engineering, programming languages, code analysis, or developer tools?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q14_SOFTWARE_ENGINEERING]\nQUESTION: Does the paper primarily study software engineering, programming languages, code analysis, or developer tools?\nPOSITIVE_SEMANTICS: Programs, code, compilers, testing, software maintenance, or developer behavior are central.\nNEGATIVE_SEMANTICS: Software is only an implementation vehicle.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "software engineering",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "computing",
+    "negative_semantics": "Humans are only data annotators or end users mentioned in passing.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Human interaction, usability, interfaces, user studies, or interactive design are central.",
+    "query_id": "Q15_HCI",
+    "question": "Does the paper primarily study human-computer interaction, user experience, or interactive systems?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q15_HCI]\nQUESTION: Does the paper primarily study human-computer interaction, user experience, or interactive systems?\nPOSITIVE_SEMANTICS: Human interaction, usability, interfaces, user studies, or interactive design are central.\nNEGATIVE_SEMANTICS: Humans are only data annotators or end users mentioned in passing.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "human-computer interaction",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "physical",
+    "negative_semantics": "Quantum terminology appears only metaphorically or in background.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Quantum states, devices, algorithms, information, or quantum phenomena are central.",
+    "query_id": "Q16_QUANTUM",
+    "question": "Does the paper primarily study quantum physics, quantum information, or quantum computing?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q16_QUANTUM]\nQUESTION: Does the paper primarily study quantum physics, quantum information, or quantum computing?\nPOSITIVE_SEMANTICS: Quantum states, devices, algorithms, information, or quantum phenomena are central.\nNEGATIVE_SEMANTICS: Quantum terminology appears only metaphorically or in background.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "quantum science",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "physical",
+    "negative_semantics": "Satellite imagery is used only for an Earth or vision task.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Astronomical objects, cosmic evolution, cosmological theory, or space observations are central.",
+    "query_id": "Q17_ASTRO_COSMOLOGY",
+    "question": "Does the paper primarily study astronomy, astrophysics, cosmology, or space observations?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q17_ASTRO_COSMOLOGY]\nQUESTION: Does the paper primarily study astronomy, astrophysics, cosmology, or space observations?\nPOSITIVE_SEMANTICS: Astronomical objects, cosmic evolution, cosmological theory, or space observations are central.\nNEGATIVE_SEMANTICS: Satellite imagery is used only for an Earth or vision task.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "astronomy and cosmology",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "physical",
+    "negative_semantics": "A material is only an application substrate.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Materials, phases, solids, electronic structure, or material synthesis or properties are central.",
+    "query_id": "Q18_MATERIALS_CONDENSED",
+    "question": "Does the paper primarily study materials science, condensed-matter physics, or material properties?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q18_MATERIALS_CONDENSED]\nQUESTION: Does the paper primarily study materials science, condensed-matter physics, or material properties?\nPOSITIVE_SEMANTICS: Materials, phases, solids, electronic structure, or material synthesis or properties are central.\nNEGATIVE_SEMANTICS: A material is only an application substrate.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "materials and condensed matter",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "physical",
+    "negative_semantics": "High energy refers only to power consumption or another nonphysics meaning.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Particles, fields, nuclei, colliders, or high-energy theory or experiment are central.",
+    "query_id": "Q19_HIGH_ENERGY_NUCLEAR",
+    "question": "Does the paper primarily study particle, high-energy, nuclear, or accelerator physics?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q19_HIGH_ENERGY_NUCLEAR]\nQUESTION: Does the paper primarily study particle, high-energy, nuclear, or accelerator physics?\nPOSITIVE_SEMANTICS: Particles, fields, nuclei, colliders, or high-energy theory or experiment are central.\nNEGATIVE_SEMANTICS: High energy refers only to power consumption or another nonphysics meaning.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "high-energy and nuclear physics",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "science",
+    "negative_semantics": "Weather data is only a generic forecasting benchmark.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Climate, atmosphere, oceans, geology, ecosystems, or environmental change are central.",
+    "query_id": "Q20_EARTH_CLIMATE",
+    "question": "Does the paper primarily study climate, weather, Earth systems, geoscience, or environmental processes?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q20_EARTH_CLIMATE]\nQUESTION: Does the paper primarily study climate, weather, Earth systems, geoscience, or environmental processes?\nPOSITIVE_SEMANTICS: Climate, atmosphere, oceans, geology, ecosystems, or environmental change are central.\nNEGATIVE_SEMANTICS: Weather data is only a generic forecasting benchmark.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "Earth and climate science",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "science",
+    "negative_semantics": "Chemical data is only a generic ML benchmark.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Molecules, reactions, synthesis, catalysis, or chemical measurement are central.",
+    "query_id": "Q21_CHEMISTRY",
+    "question": "Does the paper primarily study chemistry, molecules, reactions, or chemical properties?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q21_CHEMISTRY]\nQUESTION: Does the paper primarily study chemistry, molecules, reactions, or chemical properties?\nPOSITIVE_SEMANTICS: Molecules, reactions, synthesis, catalysis, or chemical measurement are central.\nNEGATIVE_SEMANTICS: Chemical data is only a generic ML benchmark.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "chemistry",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "life_health",
+    "negative_semantics": "Artificial neural networks are studied without a biological neuroscience contribution.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Brain function, neural activity, cognition, or neurological mechanisms are central.",
+    "query_id": "Q22_NEUROSCIENCE",
+    "question": "Does the paper primarily study the brain, nervous system, cognition, or neural measurement?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q22_NEUROSCIENCE]\nQUESTION: Does the paper primarily study the brain, nervous system, cognition, or neural measurement?\nPOSITIVE_SEMANTICS: Brain function, neural activity, cognition, or neurological mechanisms are central.\nNEGATIVE_SEMANTICS: Artificial neural networks are studied without a biological neuroscience contribution.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "neuroscience",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "life_health",
+    "negative_semantics": "A biological sequence is only an incidental example.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Genes, genomes, proteins, molecular sequences, or biological network analysis are central.",
+    "query_id": "Q23_GENOMICS_BIOINFO",
+    "question": "Does the paper primarily study genomics, genetics, proteins, molecular biology, or bioinformatics?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q23_GENOMICS_BIOINFO]\nQUESTION: Does the paper primarily study genomics, genetics, proteins, molecular biology, or bioinformatics?\nPOSITIVE_SEMANTICS: Genes, genomes, proteins, molecular sequences, or biological network analysis are central.\nNEGATIVE_SEMANTICS: A biological sequence is only an incidental example.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "genomics and bioinformatics",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "life_health",
+    "negative_semantics": "Images are nonmedical or medical imaging is only briefly mentioned.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Radiology, pathology images, scans, or image-based clinical decisions are central.",
+    "query_id": "Q24_MEDICAL_IMAGING",
+    "question": "Does the paper primarily study medical imaging or image-based clinical diagnosis?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q24_MEDICAL_IMAGING]\nQUESTION: Does the paper primarily study medical imaging or image-based clinical diagnosis?\nPOSITIVE_SEMANTICS: Radiology, pathology images, scans, or image-based clinical decisions are central.\nNEGATIVE_SEMANTICS: Images are nonmedical or medical imaging is only briefly mentioned.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "medical imaging",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "life_health",
+    "negative_semantics": "Health is only a motivation without clinical or public-health analysis.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Patients, treatments, diagnosis, epidemiology, or population health are central.",
+    "query_id": "Q25_CLINICAL_PUBLIC_HEALTH",
+    "question": "Does the paper primarily study clinical care, epidemiology, disease outcomes, or public health?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q25_CLINICAL_PUBLIC_HEALTH]\nQUESTION: Does the paper primarily study clinical care, epidemiology, disease outcomes, or public health?\nPOSITIVE_SEMANTICS: Patients, treatments, diagnosis, epidemiology, or population health are central.\nNEGATIVE_SEMANTICS: Health is only a motivation without clinical or public-health analysis.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "clinical and public health",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "economic",
+    "negative_semantics": "Causal language is informal or a causal estimator is only a minor tool.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Identification, treatment effects, causal estimation, or econometric methodology are central.",
+    "query_id": "Q26_ECONOMETRICS_CAUSAL",
+    "question": "Does the paper primarily study econometrics, causal inference, or policy-effect estimation?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q26_ECONOMETRICS_CAUSAL]\nQUESTION: Does the paper primarily study econometrics, causal inference, or policy-effect estimation?\nPOSITIVE_SEMANTICS: Identification, treatment effects, causal estimation, or econometric methodology are central.\nNEGATIVE_SEMANTICS: Causal language is informal or a causal estimator is only a minor tool.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "econometrics and causal inference",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "economic",
+    "negative_semantics": "Financial cost is only an implementation metric.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Assets, prices, portfolios, trading, banking, or financial risk are central.",
+    "query_id": "Q27_FINANCIAL_MARKETS",
+    "question": "Does the paper primarily study financial markets, assets, trading, banking, or financial risk?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q27_FINANCIAL_MARKETS]\nQUESTION: Does the paper primarily study financial markets, assets, trading, banking, or financial risk?\nPOSITIVE_SEMANTICS: Assets, prices, portfolios, trading, banking, or financial risk are central.\nNEGATIVE_SEMANTICS: Financial cost is only an implementation metric.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "financial markets",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "social",
+    "negative_semantics": "A social dataset is only used as an algorithmic benchmark.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "People, groups, social networks, communication, or collective behavior are central.",
+    "query_id": "Q28_SOCIAL_BEHAVIOR",
+    "question": "Does the paper primarily study social behavior, online communities, communication, or human collective behavior?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q28_SOCIAL_BEHAVIOR]\nQUESTION: Does the paper primarily study social behavior, online communities, communication, or human collective behavior?\nPOSITIVE_SEMANTICS: People, groups, social networks, communication, or collective behavior are central.\nNEGATIVE_SEMANTICS: A social dataset is only used as an algorithmic benchmark.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "social and behavioral science",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "social",
+    "negative_semantics": "Training a machine-learning model is not educational learning.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Learners, instruction, assessment, classrooms, or educational systems are central.",
+    "query_id": "Q29_EDUCATION",
+    "question": "Does the paper primarily study education, teaching, student learning, or educational technology?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q29_EDUCATION]\nQUESTION: Does the paper primarily study education, teaching, student learning, or educational technology?\nPOSITIVE_SEMANTICS: Learners, instruction, assessment, classrooms, or educational systems are central.\nNEGATIVE_SEMANTICS: Training a machine-learning model is not educational learning.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "education and learning science",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "method",
+    "negative_semantics": "Ordinary supervised learning, planning, or control with no reinforcement-learning setup.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "An agent learns from rewards, policies, value functions, or sequential interaction.",
+    "query_id": "Q30_REINFORCEMENT_LEARNING",
+    "question": "Is reinforcement learning or sequential reward-based decision learning a central method?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q30_REINFORCEMENT_LEARNING]\nQUESTION: Is reinforcement learning or sequential reward-based decision learning a central method?\nPOSITIVE_SEMANTICS: An agent learns from rewards, policies, value functions, or sequential interaction.\nNEGATIVE_SEMANTICS: Ordinary supervised learning, planning, or control with no reinforcement-learning setup.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "reinforcement learning",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "method",
+    "negative_semantics": "A model only classifies, retrieves, or predicts scalar outcomes.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Generation, diffusion, autoregressive synthesis, GANs, or probabilistic generative modeling is central.",
+    "query_id": "Q31_GENERATIVE_MODELS",
+    "question": "Are generative models or generation of new content a central method or contribution?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q31_GENERATIVE_MODELS]\nQUESTION: Are generative models or generation of new content a central method or contribution?\nPOSITIVE_SEMANTICS: Generation, diffusion, autoregressive synthesis, GANs, or probabilistic generative modeling is central.\nNEGATIVE_SEMANTICS: A model only classifies, retrieves, or predicts scalar outcomes.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "generative modeling",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "method",
+    "negative_semantics": "Language processing uses no large pretrained language model or mentions one only in background.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "LLMs or pretrained or foundation language models are a central object, method, or system component.",
+    "query_id": "Q32_LARGE_LANGUAGE_MODELS",
+    "question": "Are large language models, pretrained language models, or foundation language models central?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q32_LARGE_LANGUAGE_MODELS]\nQUESTION: Are large language models, pretrained language models, or foundation language models central?\nPOSITIVE_SEMANTICS: LLMs or pretrained or foundation language models are a central object, method, or system component.\nNEGATIVE_SEMANTICS: Language processing uses no large pretrained language model or mentions one only in background.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "large language models",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "method",
+    "negative_semantics": "A graph appears only as a visualization or minor representation.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Graphs, graph neural networks, network algorithms, or relational structures are central.",
+    "query_id": "Q33_GRAPH_METHODS",
+    "question": "Are graph-structured models, graph algorithms, or network representations central to the paper?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q33_GRAPH_METHODS]\nQUESTION: Are graph-structured models, graph algorithms, or network representations central to the paper?\nPOSITIVE_SEMANTICS: Graphs, graph neural networks, network algorithms, or relational structures are central.\nNEGATIVE_SEMANTICS: A graph appears only as a visualization or minor representation.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "graph methods",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "method",
+    "negative_semantics": "Time is only a metadata field or experimental duration.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Temporal observations, forecasting, sequence dynamics, or time-series methods are central.",
+    "query_id": "Q34_TIME_SERIES",
+    "question": "Is time-series modeling, temporal forecasting, or sequential signal prediction central?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q34_TIME_SERIES]\nQUESTION: Is time-series modeling, temporal forecasting, or sequential signal prediction central?\nPOSITIVE_SEMANTICS: Temporal observations, forecasting, sequence dynamics, or time-series methods are central.\nNEGATIVE_SEMANTICS: Time is only a metadata field or experimental duration.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "time-series analysis",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "contribution",
+    "negative_semantics": "The paper only uses existing datasets or benchmarks.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A new or materially curated dataset, benchmark, challenge, or standardized evaluation is a core contribution.",
+    "query_id": "Q35_BENCHMARK_DATASET",
+    "question": "Does the paper introduce or substantially curate a dataset, benchmark, challenge, or evaluation suite?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q35_BENCHMARK_DATASET]\nQUESTION: Does the paper introduce or substantially curate a dataset, benchmark, challenge, or evaluation suite?\nPOSITIVE_SEMANTICS: A new or materially curated dataset, benchmark, challenge, or standardized evaluation is a core contribution.\nNEGATIVE_SEMANTICS: The paper only uses existing datasets or benchmarks.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "benchmark or dataset",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "contribution",
+    "negative_semantics": "It provides only intuition, empirical results, or routine derivations.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The paper develops formal theory with central theorems, proofs, or rigorous guarantees.",
+    "query_id": "Q36_THEORY_PROOF",
+    "question": "Is a formal theorem, proof, or theoretical guarantee a central contribution?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q36_THEORY_PROOF]\nQUESTION: Is a formal theorem, proof, or theoretical guarantee a central contribution?\nPOSITIVE_SEMANTICS: The paper develops formal theory with central theorems, proofs, or rigorous guarantees.\nNEGATIVE_SEMANTICS: It provides only intuition, empirical results, or routine derivations.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "formal theory",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "contribution",
+    "negative_semantics": "The paper is purely theoretical, conceptual, or editorial with no substantial empirical study.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The paper's claims rely on experiments, measurements, datasets, or observational analysis.",
+    "query_id": "Q37_EMPIRICAL_STUDY",
+    "question": "Is a substantial empirical experiment or observational study central to the paper?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q37_EMPIRICAL_STUDY]\nQUESTION: Is a substantial empirical experiment or observational study central to the paper?\nPOSITIVE_SEMANTICS: The paper's claims rely on experiments, measurements, datasets, or observational analysis.\nNEGATIVE_SEMANTICS: The paper is purely theoretical, conceptual, or editorial with no substantial empirical study.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "empirical evaluation",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "contribution",
+    "negative_semantics": "Related work is included but the paper presents a new primary method or study.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Synthesizing, categorizing, or reviewing an existing literature is the primary contribution.",
+    "query_id": "Q38_SURVEY_REVIEW",
+    "question": "Is the paper primarily a survey, systematic review, tutorial, or broad synthesis of prior work?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q38_SURVEY_REVIEW]\nQUESTION: Is the paper primarily a survey, systematic review, tutorial, or broad synthesis of prior work?\nPOSITIVE_SEMANTICS: Synthesizing, categorizing, or reviewing an existing literature is the primary contribution.\nNEGATIVE_SEMANTICS: Related work is included but the paper presents a new primary method or study.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "survey or review",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "research_practice",
+    "negative_semantics": "No explicit public release is stated; inferred availability is insufficient.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The title or abstract explicitly promises a public release of code, data, models, tools, or benchmarks.",
+    "query_id": "Q39_OPEN_ARTIFACT",
+    "question": "Does the title or abstract explicitly state that data, code, a model, or another research artifact is publicly released or open-sourced?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q39_OPEN_ARTIFACT]\nQUESTION: Does the title or abstract explicitly state that data, code, a model, or another research artifact is publicly released or open-sourced?\nPOSITIVE_SEMANTICS: The title or abstract explicitly promises a public release of code, data, models, tools, or benchmarks.\nNEGATIVE_SEMANTICS: No explicit public release is stated; inferred availability is insufficient.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "open artifact",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered paper with nonempty title and abstract",
+    "family": "research_practice",
+    "negative_semantics": "A generic limitations or ethics sentence is not central to the work.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Fairness, bias, safety, accountability, ethics, misuse, or societal harm is a central object or contribution.",
+    "query_id": "Q40_ETHICS_FAIRNESS_SAFETY",
+    "question": "Does the paper centrally study ethics, fairness, bias, safety, accountability, or societal harms of computational systems?",
+    "required_field": "public arXiv title and abstract",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q40_ETHICS_FAIRNESS_SAFETY]\nQUESTION: Does the paper centrally study ethics, fairness, bias, safety, accountability, or societal harms of computational systems?\nPOSITIVE_SEMANTICS: Fairness, bias, safety, accountability, ethics, misuse, or societal harm is a central object or contribution.\nNEGATIVE_SEMANTICS: A generic limitations or ethics sentence is not central to the work.\nSCOPE: Judge only the registered paper's title and abstract; do not infer from hidden full text or category labels.\nCENTRALITY: Positive requires a central subject, method, or contribution under the query card.\nNEGATION: Negated, rejected, hypothetical, or future-only work is false unless explicitly included.\nAMBIGUITY: Return false when the title and abstract do not clearly support the condition.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC ARXIV TITLE AND ABSTRACT:\n{TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "responsible AI and safety",
+    "system_instruction": null
+  }
+]

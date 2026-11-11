@@ -1,0 +1,962 @@
+[
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Adding content to a playlist, rating, or searching without requesting playback.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A request to play, hear, or start a song, album, artist, playlist, or music.",
+    "query_id": "Q01_PLAY_MUSIC",
+    "question": "Does the utterance directly request playing or starting music or audio?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q01_PLAY_MUSIC]\nQUESTION: Does the utterance directly request playing or starting music or audio?\nPOSITIVE_SEMANTICS: A request to play, hear, or start a song, album, artist, playlist, or music.\nNEGATIVE_SEMANTICS: Adding content to a playlist, rating, or searching without requesting playback.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "playback intent",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Playing music or searching for content without a playlist modification.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Adding a song, album, artist, or track to a named or implied playlist.",
+    "query_id": "Q02_ADD_TO_PLAYLIST",
+    "question": "Does the utterance directly request adding music or audio content to a playlist?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q02_ADD_TO_PLAYLIST]\nQUESTION: Does the utterance directly request adding music or audio content to a playlist?\nPOSITIVE_SEMANTICS: Adding a song, album, artist, or track to a named or implied playlist.\nNEGATIVE_SEMANTICS: Playing music or searching for content without a playlist modification.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "playlist modification",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Searching for, discussing, or reading a book without recording a rating.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Rating a book or literary work, including an explicit score or sentiment rating.",
+    "query_id": "Q03_RATE_BOOK",
+    "question": "Does the utterance directly request assigning or recording a rating for a book?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q03_RATE_BOOK]\nQUESTION: Does the utterance directly request assigning or recording a rating for a book?\nPOSITIVE_SEMANTICS: Rating a book or literary work, including an explicit score or sentiment rating.\nNEGATIVE_SEMANTICS: Searching for, discussing, or reading a book without recording a rating.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "book rating",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Searching for a screening schedule, restaurant, weather, or requesting playback.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Finding the name of a book, song, film, show, game, or other creative work.",
+    "query_id": "Q04_SEARCH_CREATIVE_WORK",
+    "question": "Does the utterance ask to identify or find a creative work from descriptive clues?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q04_SEARCH_CREATIVE_WORK]\nQUESTION: Does the utterance ask to identify or find a creative work from descriptive clues?\nPOSITIVE_SEMANTICS: Finding the name of a book, song, film, show, game, or other creative work.\nNEGATIVE_SEMANTICS: Searching for a screening schedule, restaurant, weather, or requesting playback.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "creative-work lookup",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Identifying a creative work without a screening or venue request.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Finding movies, showtimes, screenings, theaters, or cinema availability.",
+    "query_id": "Q05_SEARCH_SCREENING_EVENT",
+    "question": "Does the utterance ask about a movie or screening event at a cinema or theater?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q05_SEARCH_SCREENING_EVENT]\nQUESTION: Does the utterance ask about a movie or screening event at a cinema or theater?\nPOSITIVE_SEMANTICS: Finding movies, showtimes, screenings, theaters, or cinema availability.\nNEGATIVE_SEMANTICS: Identifying a creative work without a screening or venue request.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "screening-event lookup",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "Weather, entertainment, or music requests; mentions of food without restaurant service.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Restaurant reservation or restaurant search intended for dining.",
+    "query_id": "Q06_BOOK_RESTAURANT",
+    "question": "Does the utterance request finding or booking a restaurant table?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q06_BOOK_RESTAURANT]\nQUESTION: Does the utterance request finding or booking a restaurant table?\nPOSITIVE_SEMANTICS: Restaurant reservation or restaurant search intended for dining.\nNEGATIVE_SEMANTICS: Weather, entertainment, or music requests; mentions of food without restaurant service.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "restaurant booking",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent",
+    "negative_semantics": "A location mention with no request for weather information.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Current or future weather, temperature, precipitation, wind, or related conditions.",
+    "query_id": "Q07_GET_WEATHER",
+    "question": "Does the utterance request weather conditions or a weather forecast?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q07_GET_WEATHER]\nQUESTION: Does the utterance request weather conditions or a weather forecast?\nPOSITIVE_SEMANTICS: Current or future weather, temperature, precipitation, wind, or related conditions.\nNEGATIVE_SEMANTICS: A location mention with no request for weather information.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "weather information",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent_union",
+    "negative_semantics": "Rating, creative search, screening, restaurant, or weather requests.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Any direct play-music or add-to-playlist action.",
+    "query_id": "Q08_MUSIC_ACTION",
+    "question": "Does the utterance request either music playback or adding music to a playlist?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q08_MUSIC_ACTION]\nQUESTION: Does the utterance request either music playback or adding music to a playlist?\nPOSITIVE_SEMANTICS: Any direct play-music or add-to-playlist action.\nNEGATIVE_SEMANTICS: Rating, creative search, screening, restaurant, or weather requests.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "music-service operation",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent_union",
+    "negative_semantics": "Playback, playlist modification, dining, or weather requests.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A creative-work lookup or movie/theater/showtime search.",
+    "query_id": "Q09_ENTERTAINMENT_SEARCH",
+    "question": "Does the utterance request either creative-work identification or screening-event search?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q09_ENTERTAINMENT_SEARCH]\nQUESTION: Does the utterance request either creative-work identification or screening-event search?\nPOSITIVE_SEMANTICS: A creative-work lookup or movie/theater/showtime search.\nNEGATIVE_SEMANTICS: Playback, playlist modification, dining, or weather requests.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "entertainment lookup",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent_union",
+    "negative_semantics": "Music, rating, or entertainment-search requests.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A restaurant search/reservation or a weather request.",
+    "query_id": "Q10_CONTEXT_SERVICE",
+    "question": "Does the utterance request either restaurant service or weather information?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q10_CONTEXT_SERVICE]\nQUESTION: Does the utterance request either restaurant service or weather information?\nPOSITIVE_SEMANTICS: A restaurant search/reservation or a weather request.\nNEGATIVE_SEMANTICS: Music, rating, or entertainment-search requests.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "context-dependent service",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "intent_union",
+    "negative_semantics": "Restaurant and weather requests.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Any registered music playback, playlist, book rating, creative lookup, or screening intent.",
+    "query_id": "Q11_CONTENT_OPERATION",
+    "question": "Does the utterance request a music, book-rating, or creative-entertainment operation?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q11_CONTENT_OPERATION]\nQUESTION: Does the utterance request a music, book-rating, or creative-entertainment operation?\nPOSITIVE_SEMANTICS: Any registered music playback, playlist, book rating, creative lookup, or screening intent.\nNEGATIVE_SEMANTICS: Restaurant and weather requests.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "content-centered action",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "music_attribute",
+    "negative_semantics": "Only generic music, genre, mood, or activity wording with no specific content identity.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A specific song, track, album, artist, band, playlist, or soundtrack is identified.",
+    "query_id": "Q12_NAMED_MUSIC_CONTENT",
+    "question": "Does the utterance name or clearly identify specific music content?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q12_NAMED_MUSIC_CONTENT]\nQUESTION: Does the utterance name or clearly identify specific music content?\nPOSITIVE_SEMANTICS: A specific song, track, album, artist, band, playlist, or soundtrack is identified.\nNEGATIVE_SEMANTICS: Only generic music, genre, mood, or activity wording with no specific content identity.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "named music entity",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "music_attribute",
+    "negative_semantics": "A music request with no playlist reference.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The word playlist or a clearly named personal/service playlist is present.",
+    "query_id": "Q13_EXPLICIT_PLAYLIST_REFERENCE",
+    "question": "Does the utterance explicitly refer to a playlist?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q13_EXPLICIT_PLAYLIST_REFERENCE]\nQUESTION: Does the utterance explicitly refer to a playlist?\nPOSITIVE_SEMANTICS: The word playlist or a clearly named personal/service playlist is present.\nNEGATIVE_SEMANTICS: A music request with no playlist reference.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "playlist reference",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "music_attribute",
+    "negative_semantics": "Time words that schedule playback rather than describe music release period.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A year, decade, era, old/new, recent, or release-period constraint on music.",
+    "query_id": "Q14_PLAYBACK_ERA_OR_RELEASE_CONSTRAINT",
+    "question": "Does the utterance constrain music by era, year, decade, or release period?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q14_PLAYBACK_ERA_OR_RELEASE_CONSTRAINT]\nQUESTION: Does the utterance constrain music by era, year, decade, or release period?\nPOSITIVE_SEMANTICS: A year, decade, era, old/new, recent, or release-period constraint on music.\nNEGATIVE_SEMANTICS: Time words that schedule playback rather than describe music release period.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "music era constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "music_attribute",
+    "negative_semantics": "Only a named artist/song or a generic request to play music.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A genre, mood, style, energy, or activity-based music preference.",
+    "query_id": "Q15_MUSIC_GENRE_OR_MOOD_CONSTRAINT",
+    "question": "Does the utterance constrain music by genre, style, mood, or listening activity?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q15_MUSIC_GENRE_OR_MOOD_CONSTRAINT]\nQUESTION: Does the utterance constrain music by genre, style, mood, or listening activity?\nPOSITIVE_SEMANTICS: A genre, mood, style, energy, or activity-based music preference.\nNEGATIVE_SEMANTICS: Only a named artist/song or a generic request to play music.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "music style constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "book_attribute",
+    "negative_semantics": "Only generic words such as book, novel, or story.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A book title, series, author, or uniquely described literary work is identified.",
+    "query_id": "Q16_NAMED_BOOK_OR_AUTHOR",
+    "question": "Does the utterance name or clearly identify a specific book or author?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q16_NAMED_BOOK_OR_AUTHOR]\nQUESTION: Does the utterance name or clearly identify a specific book or author?\nPOSITIVE_SEMANTICS: A book title, series, author, or uniquely described literary work is identified.\nNEGATIVE_SEMANTICS: Only generic words such as book, novel, or story.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "named literary entity",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "book_attribute",
+    "negative_semantics": "Only qualitative praise/dislike or a request to find a rating.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A numeric, star, or unambiguous ordinal rating value is stated.",
+    "query_id": "Q17_EXPLICIT_RATING_VALUE",
+    "question": "Does the utterance state a concrete rating value to assign to a book?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q17_EXPLICIT_RATING_VALUE]\nQUESTION: Does the utterance state a concrete rating value to assign to a book?\nPOSITIVE_SEMANTICS: A numeric, star, or unambiguous ordinal rating value is stated.\nNEGATIVE_SEMANTICS: Only qualitative praise/dislike or a request to find a rating.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "explicit rating score",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "book_attribute",
+    "negative_semantics": "No assigned score, a neutral score, or a low negative rating.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "An explicit score of at least four on a five-point scale or equivalent strong positive rating.",
+    "query_id": "Q18_HIGH_BOOK_RATING",
+    "question": "Does the utterance request a clearly high positive book rating?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q18_HIGH_BOOK_RATING]\nQUESTION: Does the utterance request a clearly high positive book rating?\nPOSITIVE_SEMANTICS: An explicit score of at least four on a five-point scale or equivalent strong positive rating.\nNEGATIVE_SEMANTICS: No assigned score, a neutral score, or a low negative rating.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "high book score",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "book_attribute",
+    "negative_semantics": "No assigned score, a neutral score, or a high positive rating.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "An explicit score of at most two on a five-point scale or equivalent strong negative rating.",
+    "query_id": "Q19_LOW_BOOK_RATING",
+    "question": "Does the utterance request a clearly low negative book rating?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q19_LOW_BOOK_RATING]\nQUESTION: Does the utterance request a clearly low negative book rating?\nPOSITIVE_SEMANTICS: An explicit score of at most two on a five-point scale or equivalent strong negative rating.\nNEGATIVE_SEMANTICS: No assigned score, a neutral score, or a high positive rating.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "low book score",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "A generic restaurant booking with no food or cuisine constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A cuisine, dish, dietary style, or food category is specified for restaurant selection.",
+    "query_id": "Q20_RESTAURANT_CUISINE",
+    "question": "Does the utterance constrain a restaurant request by cuisine or food type?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q20_RESTAURANT_CUISINE]\nQUESTION: Does the utterance constrain a restaurant request by cuisine or food type?\nPOSITIVE_SEMANTICS: A cuisine, dish, dietary style, or food category is specified for restaurant selection.\nNEGATIVE_SEMANTICS: A generic restaurant booking with no food or cuisine constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "cuisine constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "A restaurant request with no party-size information.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A number of people, table size, group, or party composition is specified.",
+    "query_id": "Q21_RESTAURANT_PARTY_SIZE",
+    "question": "Does the utterance state the number or composition of diners for a restaurant request?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q21_RESTAURANT_PARTY_SIZE]\nQUESTION: Does the utterance state the number or composition of diners for a restaurant request?\nPOSITIVE_SEMANTICS: A number of people, table size, group, or party composition is specified.\nNEGATIVE_SEMANTICS: A restaurant request with no party-size information.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "party-size constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "Only a clock time or no temporal constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A date, weekday, today, tomorrow, tonight-as-day, or another day constraint.",
+    "query_id": "Q22_RESTAURANT_DATE",
+    "question": "Does the utterance specify a calendar day or relative day for restaurant service?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q22_RESTAURANT_DATE]\nQUESTION: Does the utterance specify a calendar day or relative day for restaurant service?\nPOSITIVE_SEMANTICS: A date, weekday, today, tomorrow, tonight-as-day, or another day constraint.\nNEGATIVE_SEMANTICS: Only a clock time or no temporal constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "reservation date constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "Only a calendar date or no temporal constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A clock time, morning, lunch, dinner, evening, or comparable time window.",
+    "query_id": "Q23_RESTAURANT_TIME",
+    "question": "Does the utterance specify a clock time or meal-time window for restaurant service?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q23_RESTAURANT_TIME]\nQUESTION: Does the utterance specify a clock time or meal-time window for restaurant service?\nPOSITIVE_SEMANTICS: A clock time, morning, lunch, dinner, evening, or comparable time window.\nNEGATIVE_SEMANTICS: Only a calendar date or no temporal constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "reservation time constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "A restaurant request with no geographic constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A city, neighborhood, address, landmark, nearby relation, or geographic region.",
+    "query_id": "Q24_RESTAURANT_LOCATION",
+    "question": "Does the utterance constrain a restaurant by geographic location?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q24_RESTAURANT_LOCATION]\nQUESTION: Does the utterance constrain a restaurant by geographic location?\nPOSITIVE_SEMANTICS: A city, neighborhood, address, landmark, nearby relation, or geographic region.\nNEGATIVE_SEMANTICS: A restaurant request with no geographic constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "restaurant location constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "restaurant_attribute",
+    "negative_semantics": "Only cuisine, time, date, party size, or location information.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Price, rating, ambience, service style, accessibility, or seating preference.",
+    "query_id": "Q25_RESTAURANT_PREFERENCE",
+    "question": "Does the utterance specify a restaurant preference beyond cuisine, time, date, party size, or location?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q25_RESTAURANT_PREFERENCE]\nQUESTION: Does the utterance specify a restaurant preference beyond cuisine, time, date, party size, or location?\nPOSITIVE_SEMANTICS: Price, rating, ambience, service style, accessibility, or seating preference.\nNEGATIVE_SEMANTICS: Only cuisine, time, date, party size, or location information.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "non-location dining preference",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "A weather request with no location specified.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A city, region, landmark, current location, or other geographic target for weather.",
+    "query_id": "Q26_WEATHER_LOCATION",
+    "question": "Does a weather request specify a geographic location?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q26_WEATHER_LOCATION]\nQUESTION: Does a weather request specify a geographic location?\nPOSITIVE_SEMANTICS: A city, region, landmark, current location, or other geographic target for weather.\nNEGATIVE_SEMANTICS: A weather request with no location specified.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "weather location constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "Current or past weather only.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Tomorrow, a later weekday/date, coming days, weekend, or another future horizon.",
+    "query_id": "Q27_WEATHER_FUTURE_DATE",
+    "question": "Does the utterance request weather for a future day or future time period?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q27_WEATHER_FUTURE_DATE]\nQUESTION: Does the utterance request weather for a future day or future time period?\nPOSITIVE_SEMANTICS: Tomorrow, a later weekday/date, coming days, weekend, or another future horizon.\nNEGATIVE_SEMANTICS: Current or past weather only.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "future weather horizon",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "Only a future forecast for a later day or time.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Weather now, today as current conditions, or immediate conditions.",
+    "query_id": "Q28_CURRENT_WEATHER",
+    "question": "Does the utterance request current or immediate weather conditions?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q28_CURRENT_WEATHER]\nQUESTION: Does the utterance request current or immediate weather conditions?\nPOSITIVE_SEMANTICS: Weather now, today as current conditions, or immediate conditions.\nNEGATIVE_SEMANTICS: Only a future forecast for a later day or time.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "current weather",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "General weather or temperature with no precipitation concern.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Rain, snow, showers, storms as precipitation, or precipitation probability.",
+    "query_id": "Q29_PRECIPITATION",
+    "question": "Does the utterance ask about rain, snow, precipitation, or chance of precipitation?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q29_PRECIPITATION]\nQUESTION: Does the utterance ask about rain, snow, precipitation, or chance of precipitation?\nPOSITIVE_SEMANTICS: Rain, snow, showers, storms as precipitation, or precipitation probability.\nNEGATIVE_SEMANTICS: General weather or temperature with no precipitation concern.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "precipitation information",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "General weather without a temperature-related request.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Temperature value/range or whether conditions are hot or cold.",
+    "query_id": "Q30_TEMPERATURE",
+    "question": "Does the utterance ask about temperature, heat, cold, highs, or lows?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q30_TEMPERATURE]\nQUESTION: Does the utterance ask about temperature, heat, cold, highs, or lows?\nPOSITIVE_SEMANTICS: Temperature value/range or whether conditions are hot or cold.\nNEGATIVE_SEMANTICS: General weather without a temperature-related request.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "temperature information",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "weather_attribute",
+    "negative_semantics": "Ordinary rain/temperature or general weather without a hazardous-condition focus.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "Severe alerts, storms, hurricanes, tornadoes, strong wind, blizzards, or snow conditions.",
+    "query_id": "Q31_SEVERE_WEATHER_WIND_OR_SNOW",
+    "question": "Does the utterance ask about severe weather, strong wind, storms, or snow conditions?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q31_SEVERE_WEATHER_WIND_OR_SNOW]\nQUESTION: Does the utterance ask about severe weather, strong wind, storms, or snow conditions?\nPOSITIVE_SEMANTICS: Severe alerts, storms, hurricanes, tornadoes, strong wind, blizzards, or snow conditions.\nNEGATIVE_SEMANTICS: Ordinary rain/temperature or general weather without a hazardous-condition focus.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "hazardous weather detail",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "screening_attribute",
+    "negative_semantics": "Only generic movies, films, or shows.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A title, franchise, sequel, or uniquely described movie/show is identified.",
+    "query_id": "Q32_NAMED_MOVIE_OR_SHOW",
+    "question": "Does the utterance name or clearly identify a specific movie or show?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q32_NAMED_MOVIE_OR_SHOW]\nQUESTION: Does the utterance name or clearly identify a specific movie or show?\nPOSITIVE_SEMANTICS: A title, franchise, sequel, or uniquely described movie/show is identified.\nNEGATIVE_SEMANTICS: Only generic movies, films, or shows.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "named screen work",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "screening_attribute",
+    "negative_semantics": "Only a city/area or generic reference to theaters.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A specific cinema chain, theater, venue, or named screening location.",
+    "query_id": "Q33_NAMED_THEATER_OR_CINEMA",
+    "question": "Does the utterance name or clearly identify a theater or cinema?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q33_NAMED_THEATER_OR_CINEMA]\nQUESTION: Does the utterance name or clearly identify a theater or cinema?\nPOSITIVE_SEMANTICS: A specific cinema chain, theater, venue, or named screening location.\nNEGATIVE_SEMANTICS: Only a city/area or generic reference to theaters.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "named venue",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "screening_attribute",
+    "negative_semantics": "Only a named theater with no separate geographic area.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A city, neighborhood, region, landmark, address, or near-me constraint.",
+    "query_id": "Q34_SCREENING_LOCATION",
+    "question": "Does the screening request specify a geographic area or nearby relation?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q34_SCREENING_LOCATION]\nQUESTION: Does the screening request specify a geographic area or nearby relation?\nPOSITIVE_SEMANTICS: A city, neighborhood, region, landmark, address, or near-me constraint.\nNEGATIVE_SEMANTICS: Only a named theater with no separate geographic area.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "screening geography",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "screening_attribute",
+    "negative_semantics": "A movie/theater lookup with no schedule constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A showtime, clock time, day, date, tonight, or another scheduling constraint.",
+    "query_id": "Q35_SCREENING_DATE_OR_TIME",
+    "question": "Does the utterance specify a date, day, or time for a movie screening?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q35_SCREENING_DATE_OR_TIME]\nQUESTION: Does the utterance specify a date, day, or time for a movie screening?\nPOSITIVE_SEMANTICS: A showtime, clock time, day, date, tonight, or another scheduling constraint.\nNEGATIVE_SEMANTICS: A movie/theater lookup with no schedule constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "screening schedule constraint",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "creative_type",
+    "negative_semantics": "Music, movie/show, game, or an unspecified work type.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The relevant creative-work type is book, novel, poem, story, or other literature.",
+    "query_id": "Q36_CREATIVE_WORK_IS_BOOK",
+    "question": "Is the creative work being identified or discussed a book or literary work?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q36_CREATIVE_WORK_IS_BOOK]\nQUESTION: Is the creative work being identified or discussed a book or literary work?\nPOSITIVE_SEMANTICS: The relevant creative-work type is book, novel, poem, story, or other literature.\nNEGATIVE_SEMANTICS: Music, movie/show, game, or an unspecified work type.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "book work type",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "creative_type",
+    "negative_semantics": "Book, movie/show, game, or an unspecified work type.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The relevant creative-work type is song, track, album, composition, or music.",
+    "query_id": "Q37_CREATIVE_WORK_IS_MUSIC",
+    "question": "Is the creative work being identified or discussed a song, album, or other music work?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q37_CREATIVE_WORK_IS_MUSIC]\nQUESTION: Is the creative work being identified or discussed a song, album, or other music work?\nPOSITIVE_SEMANTICS: The relevant creative-work type is song, track, album, composition, or music.\nNEGATIVE_SEMANTICS: Book, movie/show, game, or an unspecified work type.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "music work type",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "creative_type",
+    "negative_semantics": "Book, music, game, or an unspecified work type.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "The relevant work type is movie, film, television series, episode, or show.",
+    "query_id": "Q38_CREATIVE_WORK_IS_MOVIE_OR_SHOW",
+    "question": "Is the creative work being identified or discussed a movie or television show?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q38_CREATIVE_WORK_IS_MOVIE_OR_SHOW]\nQUESTION: Is the creative work being identified or discussed a movie or television show?\nPOSITIVE_SEMANTICS: The relevant work type is movie, film, television series, episode, or show.\nNEGATIVE_SEMANTICS: Book, music, game, or an unspecified work type.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "screen work type",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "linguistic",
+    "negative_semantics": "A command or declarative request without direct question form.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "An interrogative sentence, including what/where/when/how/can/is/are question forms.",
+    "query_id": "Q39_QUESTION_FORM",
+    "question": "Is the utterance phrased as a direct question rather than only an imperative or statement?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q39_QUESTION_FORM]\nQUESTION: Is the utterance phrased as a direct question rather than only an imperative or statement?\nPOSITIVE_SEMANTICS: An interrogative sentence, including what/where/when/how/can/is/are question forms.\nNEGATIVE_SEMANTICS: A command or declarative request without direct question form.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "interrogative form",
+    "system_instruction": null
+  },
+  {
+    "eligibility": "every registered utterance",
+    "family": "cross_intent_attribute",
+    "negative_semantics": "Named content/venue alone or a request with no geographic constraint.",
+    "output_type": "Boolean",
+    "parser": "JSON object with exactly one Boolean key named value",
+    "positive_semantics": "A city, region, neighborhood, address, landmark, current-location, or near-me constraint.",
+    "query_id": "Q40_LOCATION_CONSTRAINT_ANY",
+    "question": "Does the utterance include a geographic location or proximity constraint relevant to the request?",
+    "required_field": "public Snips utterance",
+    "scalar_request_template": {
+      "messages": [
+        {
+          "content": "[Q40_LOCATION_CONSTRAINT_ANY]\nQUESTION: Does the utterance include a geographic location or proximity constraint relevant to the request?\nPOSITIVE_SEMANTICS: A city, region, neighborhood, address, landmark, current-location, or near-me constraint.\nNEGATIVE_SEMANTICS: Named content/venue alone or a request with no geographic constraint.\nNEGATION: A negated, rejected, or explicitly cancelled intent/condition is false unless the query asks about cancellation.\nMODALITY: Hypothetical examples and reported third-party intents are false; evaluate the current speaker's request.\nAMBIGUITY: Return false when the condition is not clearly supported by the utterance.\nReturn exactly one JSON object with one Boolean field: {\"value\": <true-or-false>}.\nPUBLIC UTTERANCE: {TEXT}",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-5.6-luna",
+      "stream": false,
+      "user": "{REQUEST_ID}"
+    },
+    "semantic_purpose": "geographic constraint",
+    "system_instruction": null
+  }
+]

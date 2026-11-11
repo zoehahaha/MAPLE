@@ -1,0 +1,24 @@
+{
+  "leaf_to_group": {
+    "Christianity": "religion",
+    "Macintosh hardware": "computers",
+    "Middle East affairs": "politics",
+    "PC hardware": "computers",
+    "atheism": "religion",
+    "baseball": "sports",
+    "cars": "motor vehicles",
+    "computer graphics": "computers",
+    "cryptography": "science",
+    "electronics": "science",
+    "gun control": "politics",
+    "hockey": "sports",
+    "items for sale": "classified ads",
+    "medicine": "science",
+    "motorcycles": "motor vehicles",
+    "political debate": "politics",
+    "religious debate": "religion",
+    "space exploration": "science",
+    "the Microsoft Windows operating system": "computers",
+    "the X Window System": "computers"
+  }
+}

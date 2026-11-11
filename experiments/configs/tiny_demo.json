@@ -1,0 +1,21 @@
+{
+  "protocol": "PREP_TINY_DEMO_V1",
+  "precision_target": 0.9,
+  "recall_target": 0.9,
+  "alpha_per_query": 0.05,
+  "discovery_fraction_per_round": 0.2,
+  "discovery_maximum_rounds": 2,
+  "discovery_minimum_rounds": 1,
+  "discovery_consecutive_passes": 1,
+  "scoring_example_fraction": 0.1,
+  "guard_base_feature_cap": 8,
+  "guard_single_cap": 4,
+  "guard_conjunction_frontier": 3,
+  "guard_per_target_cap": 3,
+  "monte_carlo_scenarios": 4,
+  "scenario_namespace": "PREP_TINY_DEMO_V1",
+  "ggr_shortlist": 4,
+  "ggr_complete_score_cap": 8,
+  "ggr_move_cap": 2,
+  "control_requests": 0
+}

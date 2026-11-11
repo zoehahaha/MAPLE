@@ -1,0 +1,5 @@
+workload,rows,queries,required_outputs,rare_positive_queries
+Snips,2000,40,80000,16/40 (40.0%)
+arXiv,2000,40,80000,29/40 (72.5%)
+Amazon-Elec,5000,40,200000,21/40 (52.5%)
+20 Newsgroups,2000,47,94000,30/47 (63.8%)

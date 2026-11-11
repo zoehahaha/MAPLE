@@ -1,0 +1,5 @@
+workload,sweep,setting,call_saving_percent,value_kind
+arXiv,scoring_sample_percent,15,11,approximate
+20 Newsgroups,scoring_sample_percent,10,12,approximate
+20 Newsgroups,discovery_round_cap,8,9.7,approximate
+20 Newsgroups,discovery_round_cap,12,5.4,approximate

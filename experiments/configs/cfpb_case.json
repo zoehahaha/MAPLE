@@ -1,0 +1,8 @@
+{
+  "protocol": "PREP_CFPB_RARE_POSITIVE_CASE_V1",
+  "base_config": "paper.json",
+  "rows": 1000,
+  "queries": 40,
+  "required_outputs": 40000,
+  "provider_attempts": 0
+}

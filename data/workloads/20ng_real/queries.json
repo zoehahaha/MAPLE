@@ -1,0 +1,707 @@
+[
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post asks for technical help with computer hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "A1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post asks for technical help with a personal computer's hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "A2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is a request for technical assistance concerning computer hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "A3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post asks for help with Macintosh hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "A4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post describes a hardware problem the author is experiencing.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "A5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "B1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post offers an item for sale.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "B1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "B2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post offers a computer or a computer part for sale.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "B2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "B3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post mentions a specific price in dollars.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "B3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "B4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is an advertisement.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "B4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "B5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is looking to buy something rather than to sell something.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "B5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "C1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses a professional sports team.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "C1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "C2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses a professional baseball team.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "C2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "C3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post mentions a player's statistics.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "C3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "C4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is about a sporting event that has already taken place.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "C4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "C5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is about sports.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "C5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post argues about politics.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post argues about gun control policy.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post expresses a religious belief.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post argues about religion.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses the Middle East.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "D6",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post criticizes a government or a government policy.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "D6",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "E1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The author of the post is frustrated or angry.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "E1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "E2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post contains a question.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "E2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "E3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post quotes another message.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "E3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "E4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post uses technical jargon.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "E4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "E5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post makes a factual claim that could be checked.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "E5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses medicine or health.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses a specific disease or medical condition.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses space or astronomy.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses cryptography or encryption.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses computer security.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "F6",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses science.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "F6",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "G1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post mentions an operating system.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "G1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "G2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post mentions Microsoft Windows.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "G2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "G3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post mentions the X Window System.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "G3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "G4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses software rather than hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "G4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "G5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post recommends a product or a service.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "G5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "A1",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post asks for technical help with computer hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H1",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H2",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is selling something.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H2",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H3",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is about a motor vehicle.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H3",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H4",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is about a car or a motorcycle.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H4",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H5",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post gives advice about maintaining a vehicle.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H5",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H6",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The tone of the post is angry or annoyed.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H6",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H7",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is about a computer operating system.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H7",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H8",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post is a for-sale advertisement.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H8",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H9",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post discusses encryption algorithms or key management.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H9",
+    "system_instruction": "included in prompt_template"
+  },
+  {
+    "oracle_options": {
+      "num_predict": 3,
+      "seed": 0,
+      "temperature": 0,
+      "top_k": 1,
+      "top_p": 1
+    },
+    "original_query_id": "H10",
+    "parser": "strip and lowercase; yes=>true, no=>false",
+    "predicate": "The post asks a question about computer hardware.",
+    "prompt_template": "You are a careful data analyst labelling documents for a database query.\n\nDocument:\n\"\"\"\n{document}\n\"\"\"\n\nClaim: {claim}\n\nDoes the claim hold for this document? Answer with exactly one word, yes or no.\nAnswer:",
+    "query_id": "H10",
+    "system_instruction": "included in prompt_template"
+  }
+]

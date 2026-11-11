@@ -1,0 +1,5 @@
+include README.md RUNNING.md LICENSE .gitignore
+recursive-include data *.json *.jsonl *.gz *.md
+recursive-include reference *.md *.csv *.png
+recursive-include experiments *.py *.json *.md
+recursive-include tests *.py

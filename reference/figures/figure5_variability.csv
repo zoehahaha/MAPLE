@@ -1,0 +1,5 @@
+workload,annotated_call_saving_percent,runs,all_runs_positive
+Snips,17.05,8,true
+arXiv,11.23,8,true
+Amazon-Elec,8.71,8,true
+20 Newsgroups,12.57,8,true

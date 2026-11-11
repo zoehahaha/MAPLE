@@ -1,0 +1,4 @@
+{
+  "oracle": "gpt-5.6-luna",
+  "response_format": "JSON object with one Boolean field named value"
+}

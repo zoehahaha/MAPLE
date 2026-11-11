@@ -1,0 +1,41 @@
+method,workload,miss_pr_percent,mean_miss_pr_percent
+PREP,Snips,0.0,0.0
+PREP,arXiv,0.0,0.0
+PREP,Amazon-Elec,0.0,0.0
+PREP,20 Newsgroups,0.0,0.0
+SemReusePR,Snips,0.0,0.0
+SemReusePR,arXiv,0.0,0.0
+SemReusePR,Amazon-Elec,0.0,0.0
+SemReusePR,20 Newsgroups,0.0,0.0
+LOTUS full,Snips,7.5,32.8
+LOTUS full,arXiv,45.0,32.8
+LOTUS full,Amazon-Elec,42.5,32.8
+LOTUS full,20 Newsgroups,36.2,32.8
+SemWeave .90,Snips,72.5,43.0
+SemWeave .90,arXiv,60.0,43.0
+SemWeave .90,Amazon-Elec,22.5,43.0
+SemWeave .90,20 Newsgroups,17.0,43.0
+LOTUS prefix,Snips,7.5,43.2
+LOTUS prefix,arXiv,57.5,43.2
+LOTUS prefix,Amazon-Elec,52.5,43.2
+LOTUS prefix,20 Newsgroups,55.3,43.2
+SemWeave .80,Snips,87.5,51.7
+SemWeave .80,arXiv,60.0,51.7
+SemWeave .80,Amazon-Elec,27.5,51.7
+SemWeave .80,20 Newsgroups,31.9,51.7
+SemWeave .70,Snips,87.5,54.8
+SemWeave .70,arXiv,65.0,54.8
+SemWeave .70,Amazon-Elec,32.5,54.8
+SemWeave .70,20 Newsgroups,34.0,54.8
+GPTCache .975,Snips,100.0,77.7
+GPTCache .975,arXiv,20.0,77.7
+GPTCache .975,Amazon-Elec,95.0,77.7
+GPTCache .975,20 Newsgroups,95.7,77.7
+Native Fusion,Snips,62.5,82.7
+Native Fusion,arXiv,82.5,82.7
+Native Fusion,Amazon-Elec,90.0,82.7
+Native Fusion,20 Newsgroups,95.7,82.7
+GPTCache .90,Snips,100.0,98.9
+GPTCache .90,arXiv,100.0,98.9
+GPTCache .90,Amazon-Elec,100.0,98.9
+GPTCache .90,20 Newsgroups,95.7,98.9

@@ -1,0 +1,362 @@
+[
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} complains about the battery",
+    "predicate_text": "the review complains about the battery",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/battery_complaint",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the battery or device overheats",
+    "predicate_text": "the review says the battery or device overheats",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/battery_overheats",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} praises the battery life",
+    "predicate_text": "the review praises the battery life",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/battery_life_praise",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} reports a hardware defect",
+    "predicate_text": "the review reports a hardware defect",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/hardware_defect",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the product broke or stopped working within a few weeks",
+    "predicate_text": "the review says the product broke or stopped working within a few weeks",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/broke_quickly",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the product arrived damaged",
+    "predicate_text": "the review says the product arrived damaged",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/arrived_damaged",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the wrong item was received",
+    "predicate_text": "the review says the wrong item was received",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/wrong_item",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says parts or accessories were missing",
+    "predicate_text": "the review says parts or accessories were missing",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/missing_parts",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions shipping or delivery",
+    "predicate_text": "the review mentions shipping or delivery",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/shipping",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions customer service or support",
+    "predicate_text": "the review mentions customer service or support",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/customer_service",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions returning the product or getting a refund",
+    "predicate_text": "the review mentions returning the product or getting a refund",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/return_refund",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions a warranty claim or warranty coverage",
+    "predicate_text": "the review mentions a warranty claim or warranty coverage",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/warranty",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} discusses sound quality",
+    "predicate_text": "the review discusses sound quality",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/sound_quality",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} praises the sound quality",
+    "predicate_text": "the review praises the sound quality",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/sound_praise",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions noise cancellation",
+    "predicate_text": "the review mentions noise cancellation",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/noise_cancel",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} discusses the screen or display",
+    "predicate_text": "the review discusses the screen or display",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/screen",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} comments on price or value for money",
+    "predicate_text": "the review comments on price or value for money",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/price_value",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} recommends the product",
+    "predicate_text": "the review recommends the product",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/recommends",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} advises others not to buy the product",
+    "predicate_text": "the review advises others not to buy the product",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/not_recommend",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} is overall negative about the product",
+    "predicate_text": "the review is overall negative about the product",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/negative",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} is overall positive about the product",
+    "predicate_text": "the review is overall positive about the product",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/positive",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} expresses both positive and negative opinions about the product",
+    "predicate_text": "the review expresses both positive and negative opinions about the product",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/mixed",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions an Apple product such as an iPhone, iPad, or Mac",
+    "predicate_text": "the review mentions an Apple product such as an iPhone, iPad, or Mac",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/apple",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} compares the product with another brand or model",
+    "predicate_text": "the review compares the product with another brand or model",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/compare_brand",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the product was bought as a gift",
+    "predicate_text": "the review says the product was bought as a gift",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/gift",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions children or kids",
+    "predicate_text": "the review mentions children or kids",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/kids",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the product was easy to set up or install",
+    "predicate_text": "the review says the product was easy to set up or install",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/setup_easy",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} complains about missing or unclear instructions",
+    "predicate_text": "the review complains about missing or unclear instructions",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/instructions",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} reports Bluetooth, Wi-Fi, or pairing problems",
+    "predicate_text": "the review reports Bluetooth, Wi-Fi, or pairing problems",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/connectivity",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} reports problems with charging",
+    "predicate_text": "the review reports problems with charging",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/charging",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} discusses a cable or cord",
+    "predicate_text": "the review discusses a cable or cord",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/cable",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} reports software, app, or firmware problems",
+    "predicate_text": "the review reports software, app, or firmware problems",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/software",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} complains about poor build quality",
+    "predicate_text": "the review complains about poor build quality",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/build_quality_poor",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} praises durability or sturdiness",
+    "predicate_text": "the review praises durability or sturdiness",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/durability_praise",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} discusses comfort or fit",
+    "predicate_text": "the review discusses comfort or fit",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/comfort",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} suspects the product is fake or counterfeit",
+    "predicate_text": "the review suspects the product is fake or counterfeit",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/counterfeit",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions a safety hazard such as fire, smoke, or electric shock",
+    "predicate_text": "the review mentions a safety hazard such as fire, smoke, or electric shock",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/safety",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} mentions a smell or odor",
+    "predicate_text": "the review mentions a smell or odor",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/smell",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says the product works as described or as advertised",
+    "predicate_text": "the review says the product works as described or as advertised",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/as_described",
+    "system_instruction": null
+  },
+  {
+    "name": null,
+    "parser": "SemViews parse_ok Boolean tape",
+    "predicate_template": "{text} says they would buy the product again or bought more than one",
+    "predicate_text": "the review says they would buy the product again or bought more than one",
+    "prompt_version": "lotus-1.2.4-sem_filter-default",
+    "query_id": "reviews/repurchase",
+    "system_instruction": null
+  }
+]

@@ -1,0 +1,23 @@
+section,method,workload,call_saving_percent
+rule_families,PREP,Snips,17.10
+rule_families,PREP,arXiv,11.63
+rule_families,PREP,Amazon-Elec,8.71
+rule_families,PREP,20 Newsgroups,12.26
+rule_families,Base only,Snips,15.85
+rule_families,Base only,arXiv,9.15
+rule_families,Base only,Amazon-Elec,4.62
+rule_families,Base only,20 Newsgroups,8.74
+rule_families,Conditional only,Snips,2.80
+rule_families,Conditional only,arXiv,2.97
+rule_families,Conditional only,Amazon-Elec,3.71
+rule_families,Conditional only,20 Newsgroups,3.75
+rule_families,Query Copy,Snips,2.72
+rule_families,Query Copy,arXiv,2.53
+rule_families,Query Copy,Amazon-Elec,1.85
+rule_families,Query Copy,20 Newsgroups,3.88
+plan_selection,Forecast total calls,arXiv,9.15
+plan_selection,Forecast total calls,20 Newsgroups,8.74
+plan_selection,Highest coverage,arXiv,4.82
+plan_selection,Highest coverage,20 Newsgroups,5.56
+plan_selection,Random,arXiv,3.03
+plan_selection,Random,20 Newsgroups,0.00

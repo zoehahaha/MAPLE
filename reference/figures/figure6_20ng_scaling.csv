@@ -1,0 +1,7 @@
+reference_family,query_count,method,call_saving_percent,value_kind
+real,40,PREP,13.27,reported
+real,40,SemReusePR,5.10,reported
+real,40,Exact cache,2.50,reported
+synthetic,120,Exact cache,38,approximate
+synthetic,120,PREP,50,greater_than
+synthetic,120,SemReusePR,50,greater_than

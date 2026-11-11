@@ -1,0 +1,5 @@
+workload,configuration,call_saving_percent,observed_miss_pr,queries,added_calls_for_certification
+arXiv,without_certification,31.27,13,40,0
+arXiv,certified,9.12,0,40,17720
+20 Newsgroups,without_certification,31.39,9,47,0
+20 Newsgroups,certified,10.76,0,47,19394
